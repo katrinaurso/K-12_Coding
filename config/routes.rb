@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
 
   root 'admins#new'
-  
-  get 'admins/index'
+  resources :admins
 
-  get 'admins/new'
+  # get 'admins/index'
 
-  get 'admins/create'
+  # get 'admins/new'
 
-  get 'admins/show'
+  # get 'admins/create' => 'admins#create'
 
-  get 'admins/edit'
+  # get 'admins/show'
 
-  get 'admins/update'
+  # get 'admins/edit'
 
-  get 'admins/destroy'
+  # get 'admins/update'
+
+  # get 'admins/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
