@@ -1,16 +1,16 @@
 <h1>Register</h1>
-<%= simple_form_for @admin do |f| %>
-<%= f.input :first_name %>
-<%= f.input :last_name %>
-<%= f.input :email %>
-<%= f.input :pass %>
-<%= f.input :pass_confirmation %>
-<%= f.button :submit %>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+<p><%= error %></p>
+	<% end %>
 <% end %>
 
-<h1>Login</h1>
 <%= simple_form_for @admin do |f| %>
-<%= f.input :email %>
-<%= f.input :pass %>
-<%= f.button :submit %>
+<%= f.input :first_name, required: false %>
+<%= f.input :last_name, required: false %>
+<%= f.input :email, required: false %>
+<%= f.input :pass, required: false, label: 'Password' %>
+<%= f.input :pass_confirmation, label: 'Password Confirmation' %>
+<%= f.button :submit, 'Register' %>
 <% end %>

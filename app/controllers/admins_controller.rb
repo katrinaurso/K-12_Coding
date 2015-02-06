@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
       session[:admin_id] = @admin.id
       redirect_to @admin
     else
-      # set errors
+      flash[:errors] = @admin.errors.full_messages
       redirect_to '/'
     end
   end
