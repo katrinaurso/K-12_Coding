@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206210725) do
+ActiveRecord::Schema.define(version: 20150206233233) do
 
   create_table "admins", force: true do |t|
     t.string   "first_name"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20150206210725) do
   end
 
   add_index "admins", ["school_id"], name: "index_admins_on_school_id"
+
+  create_table "newsfeeds", force: true do |t|
+    t.integer  "school_id"
+    t.integer  "admin_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "newsfeeds", ["admin_id"], name: "index_newsfeeds_on_admin_id"
+  add_index "newsfeeds", ["school_id"], name: "index_newsfeeds_on_school_id"
 
   create_table "schools", force: true do |t|
     t.string   "name"

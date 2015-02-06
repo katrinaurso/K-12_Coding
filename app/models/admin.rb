@@ -1,5 +1,6 @@
 class Admin < ActiveRecord::Base
 	belongs_to :school
+	has_many :newsfeeds
 
 	attr_accessor :pass, :pass_confimration
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
