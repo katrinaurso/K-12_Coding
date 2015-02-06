@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -37,3 +37,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+# Use rails-footnotes for development
+gem 'rails-footnotes', '>= 4.0.0', '<5'
+
+# Use Hirb for nice display of database queries in console
+gem 'hirb'
+
+# Use Simpleform to easily create forms
+gem 'simple_form'
