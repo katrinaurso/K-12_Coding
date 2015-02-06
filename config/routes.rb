@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'schools/index'
+
+  get 'schools/show'
+
   root 'admins#new'
   resources :admins
   resources :sessions, only: [:new, :create, :destroy]

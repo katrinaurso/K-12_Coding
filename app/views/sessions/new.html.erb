@@ -6,6 +6,6 @@
 
 <%= simple_form_for(:session, url: sessions_path) do |f| %>
 <%= f.input :email, required: false %>
-<%= f.input :pass, required: false %>
-<%= f.button :submit %>
+<%= f.input :pass, required: false, label: 'Password' %>
+<%= f.button :submit, 'Login' %>
 <% end %>
