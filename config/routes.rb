@@ -1,39 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'dashboards/index'
 
-  get 'dashboards/new'
 
-  get 'dashboards/create'
-
-  get 'dashboards/edit'
-
-  get 'dashboards/update'
-
-  get 'dashboards/destroy'
+  root 'admins#new'
+  resources :admins
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :dashboards
+  delete 'logout' => 'sessions#destroy'
 
   get 'schools/index'
 
   get 'schools/show'
 
-  root 'admins#new'
-  resources :admins
-  resources :sessions, only: [:new, :create, :destroy]
-  delete 'logout' => 'sessions#destroy'
-
-  # get 'admins/index'
-
-  # get 'admins/new'
-
-  # get 'admins/create' => 'admins#create'
-
-  # get 'admins/show'
-
-  # get 'admins/edit'
-
-  # get 'admins/update'
-
-  # get 'admins/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

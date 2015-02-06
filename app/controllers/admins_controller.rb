@@ -13,7 +13,7 @@ class AdminsController < ApplicationController
       redirect_to @admin
     else
       flash[:errors] = @admin.errors.full_messages
-      redirect_to '/'
+      redirect_to dashboards_path
     end
   end
 

@@ -25,7 +25,14 @@ module SessionsHelper
 		admin == self.current_admin
 	end
 
+	def require_logged_in
+		if !logged_in?
+			deny_access
+		end
+	end
+
 	def deny_access
-		redirect_to '/', notice: "Please sign in to access this page"
+		flash[:notice] = "Please sign in to access this page"
+		redirect_to '/'
 	end
 end

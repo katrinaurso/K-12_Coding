@@ -1,5 +1,8 @@
 class DashboardsController < ApplicationController
+  before_action :require_logged_in
+
   def index
+    @admin = Admin.find(current_admin)
   end
 
   def new
