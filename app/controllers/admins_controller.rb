@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.create(admin_params)
     if @admin.save
-      session[:admin_id] = @admin.id
+      log_in @admin
       redirect_to @admin
     else
       flash[:errors] = @admin.errors.full_messages
@@ -18,7 +18,7 @@ class AdminsController < ApplicationController
   end
 
   def show
-    if session[:admin_id]
+    if logged_in?
       @admin = Admin.find(params[:id])
     else
       redirect_to '/'

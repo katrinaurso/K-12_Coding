@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
   root 'admins#new'
   resources :admins
+  resources :sessions, only: [:new, :create, :destroy]
+  delete 'logout' => 'sessions#destroy'
 
   # get 'admins/index'
 

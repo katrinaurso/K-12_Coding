@@ -11,6 +11,16 @@ class Admin < ActiveRecord::Base
 		self.email.downcase!
 	end
 
+	def has_pass?(submitted_password)
+		self.password == encrypt(submitted_password)
+	end
+
+	def self.authenticate(email, submitted_password)
+		admin = find_by_email(email)
+		return nil if admin.nil?
+		return admin if admin.has_pass?(submitted_password)
+	end
+
 	private
 		def encrypt_pass
 			self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.pass}") if self.new_record?
