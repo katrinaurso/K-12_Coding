@@ -12,4 +12,12 @@
 	<%= f.button :submit %>
 <% end %>
 
+<% if @newsfeeds %>
+	<% @newsfeeds.each do |n| %>
+		<p><%= n.content %></p>
+		<% @time = n.created_at.localtime %>
+		<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+	<% end %>
+<% end %>	
+
 <%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>

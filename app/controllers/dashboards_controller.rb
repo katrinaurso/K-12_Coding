@@ -3,8 +3,8 @@ class DashboardsController < ApplicationController
 
   def index
     @admin = Admin.find(current_admin)
-
     @newsfeed = Newsfeed.new
+    @newsfeeds = Newsfeed.all
   end
 
   def new
