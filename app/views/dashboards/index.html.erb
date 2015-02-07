@@ -23,3 +23,5 @@
 <% end %>	
 
 <%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>
+
+<iframe id='embedded' src='http://localhost:3000/schools/<%= @school %>' />

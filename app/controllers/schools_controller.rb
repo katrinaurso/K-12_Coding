@@ -3,6 +3,6 @@ class SchoolsController < ApplicationController
   end
 
   def show
-  	@newsfeed = Newsfeed.where(school:params[:id])
+  	@newsfeed = Newsfeed.where(school:params[:id]).reverse
   end
 end

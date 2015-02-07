@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
     @admin = Admin.find(current_admin)
     @newsfeed = Newsfeed.new
     @newsfeeds = Newsfeed.where(school:current_school).reverse
+    @school = current_school.id
   end
 
   def new
