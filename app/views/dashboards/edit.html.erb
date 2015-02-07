@@ -10,3 +10,6 @@
 	<%= f.input :content, required: false %>
 	<%= f.button :submit, 'Update' %>
 <% end %>
+
+<%= button_to('Delete', dashboard_path, method: :delete) %>
+

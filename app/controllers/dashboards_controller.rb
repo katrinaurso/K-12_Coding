@@ -40,5 +40,7 @@ class DashboardsController < ApplicationController
   end
 
   def destroy
+    @newsfeed = Newsfeed.find(params[:id]).destroy
+    redirect_to dashboards_path
   end
 end

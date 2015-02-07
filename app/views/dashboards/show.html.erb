@@ -1,3 +1,6 @@
 <h1>Dashboards#show</h1>
+
 <p><%= @newsfeed.content %></p>
+
 <%= button_to('Edit', edit_dashboard_path, method: :get) %>
+<%= button_to('Delete', dashboard_path, method: :delete) %>
