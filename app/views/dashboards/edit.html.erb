@@ -1,2 +1,12 @@
 <h1>Dashboards#edit</h1>
-<p>Find me in app/views/dashboards/edit.html.erb</p>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
+
+<%= simple_form_for @newsfeed, url: dashboard_path do |f| %>
+	<%= f.input :content, required: false %>
+	<%= f.button :submit, 'Update' %>
+<% end %>

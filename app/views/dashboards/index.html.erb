@@ -1,9 +1,15 @@
 <h1>Dashboards#index</h1>
 <p>Welcome <%= @admin.first_name %>!</p>
 
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
+
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
-<%= f.input :content %>
-<%= f.button :submit %>
+	<%= f.input :content, required: false %>
+	<%= f.button :submit %>
 <% end %>
 
 <%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>
