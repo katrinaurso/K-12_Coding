@@ -1,2 +1,9 @@
 <h1>Dashboards#index</h1>
-<p>Welcomme <%= @admin.first_name %></p>
+<p>Welcome <%= @admin.first_name %>!</p>
+
+<%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
+<%= f.input :content %>
+<%= f.button :submit %>
+<% end %>
+
+<%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>

@@ -1,3 +1,3 @@
 <h1>Admins#show</h1>
 <p><%= @admin.first_name %></p>
-<%= button_to 'Logout', { action:'destroy' }, method: :delete %>
+<%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>

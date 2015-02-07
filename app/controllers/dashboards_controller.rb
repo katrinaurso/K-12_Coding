@@ -3,12 +3,15 @@ class DashboardsController < ApplicationController
 
   def index
     @admin = Admin.find(current_admin)
+
+    @newsfeed = Newsfeed.new
   end
 
   def new
   end
 
   def create
+    @newsfeed = Newsfeed.create(content:params[:newsfeed][:content], admin:current_admin, school:current_school)
   end
 
   def edit

@@ -1,6 +1,7 @@
 module SessionsHelper
 	def log_in(admin)
 		session[:admin_id] = admin.id 
+		session[:school_id] = admin.school_id
 		self.current_admin=(admin)
 	end
 
@@ -12,12 +13,17 @@ module SessionsHelper
 		@current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
+	def current_school
+		@current_school ||= School.find(session[:school_id]) if session[:school_id]
+	end
+
 	def logged_in?
 		!current_admin.nil?
 	end
 
 	def log_out
 		session[:admin_id] = nil
+		session[:school_id] = nil
 		self.current_admin = nil
 	end
 

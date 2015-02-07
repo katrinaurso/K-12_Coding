@@ -10,10 +10,10 @@ class AdminsController < ApplicationController
     @admin = Admin.create(admin_params)
     if @admin.save
       log_in @admin
-      redirect_to @admin
+      redirect_to dashboards_path
     else
       flash[:errors] = @admin.errors.full_messages
-      redirect_to dashboards_path
+      redirect_to '/'
     end
   end
 
@@ -32,8 +32,6 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    session[:admin_id] = nil
-    redirect_to '/'
   end
 
   private
