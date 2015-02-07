@@ -1,19 +1,22 @@
-<h1>Register</h1>
-
-<% if flash[:errors] %>
-	<% flash[:errors].each do |error| %>
-		<p><%= error %></p>
+<div class="rl">
+	<h1>Register</h1>
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |error| %>
+			<p><%= error %></p>
+		<% end %>
 	<% end %>
-<% end %>
 
-<%= simple_form_for @admin do |f| %>
-	<%= f.input :first_name, required: false %>
-	<%= f.input :last_name, required: false %>
-	<%= f.association :school %>
-	<%= f.input :email, required: false %>
-	<%= f.input :pass, required: false, label: 'Password' %>
-	<%= f.input :pass_confirmation, label: 'Password Confirmation' %>
-	<%= f.button :submit, 'Register' %>
-<% end %>
+	<%= simple_form_for @admin do |f| %>
+		<%= f.input :first_name, required: false %>
+		<%= f.input :last_name, required: false %>
+		<%= f.association :school, required: false %>
+		<%= f.input :email, required: false %>
+		<%= f.input :pass, required: false, label: 'Password' %>
+		<%= f.input :pass_confirmation, label: 'Password Confirmation' %>
+		<%= f.button :submit, 'Register' %>
+	<% end %>
+</div>
 
-<%= render template: '/sessions/new' %>
+<div class="rl">
+	<%= render template: '/sessions/new' %>
+</div>

@@ -1,6 +1,6 @@
 <h1>Dashboards#index</h1>
 <p>Welcome <%= @admin.first_name %>!</p>
-<%= button_to 'Edit My Info', (edit_admin_path @admin.id), method: :get %>
+<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get %>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
@@ -11,7 +11,7 @@
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 	<%= f.input :title, required: false %>
 	<%= f.input :content, required: false %>
-	<%= f.button :submit %>
+	<%= f.button :submit, 'Publish' %>
 <% end %>
 
 <% if @newsfeeds %>
