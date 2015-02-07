@@ -1,2 +1,17 @@
 <h1>Admins#edit</h1>
-<p>Find me in app/views/admins/edit.html.erb</p>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
+
+<%= simple_form_for @admin, url: admin_path, method: :put do |f| %>
+	<%= f.input :first_name, required: false %>
+	<%= f.input :last_name, required: false %>
+	<%= f.association :school, required: false %>
+	<%= f.input :email, required: false %>
+	<%= f.input :pass, required: false, label: 'New Password' %>
+	<%= f.input :pass_confirmation, label: 'New Password Confirmation' %>
+	<%= f.button :submit, 'Register' %>
+<% end %>

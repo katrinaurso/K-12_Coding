@@ -26,9 +26,17 @@ class AdminsController < ApplicationController
   end
 
   def edit
+    @admin = Admin.find(params[:id])
   end
 
   def update
+    @admin = Admin.find(params[:id])
+    if @admin.update(admin_params)
+      redirect_to dashboards_path
+    else
+      flash[:errors] = @admin.errors.full_messages
+      redirect_to edit_admin_path @admin
+    end
   end
 
   def destroy
