@@ -3,5 +3,6 @@ class SchoolsController < ApplicationController
   end
 
   def show
+  	@newsfeed = Newsfeed.where(school:params[:id])
   end
 end

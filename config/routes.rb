@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   resources :admins
   resources :sessions, only: [:new, :create, :destroy]
   resources :dashboards
+  resources :schools, only: [:show]
   delete 'logout' => 'sessions#destroy'
-
-  get 'schools/index'
-
-  get 'schools/show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
