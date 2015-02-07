@@ -8,12 +8,14 @@
 <% end %>
 
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
+	<%= f.input :title, required: false %>
 	<%= f.input :content, required: false %>
 	<%= f.button :submit %>
 <% end %>
 
 <% if @newsfeeds %>
 	<% @newsfeeds.each do |n| %>
+		<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>
 		<p><%= n.content %></p>
 		<% @time = n.created_at.localtime %>
 		<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>

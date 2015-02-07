@@ -7,6 +7,7 @@
 <% end %>
 
 <%= simple_form_for @newsfeed, url: dashboard_path do |f| %>
+	<%= f.input :title, required: false %>
 	<%= f.input :content, required: false %>
 	<%= f.button :submit, 'Update' %>
 <% end %>

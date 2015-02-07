@@ -1,6 +1,14 @@
 <h1>Dashboards#show</h1>
 
+<h2><%= @newsfeed.title %></h2>
+
 <p><%= @newsfeed.content %></p>
+
+<% @time = @newsfeed.created_at.localtime %>
+<p>Created by: <%= @newsfeed.first_name %> <%= @newsfeed.last_name %> - <%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+
+<% @time2 = @newsfeed.updated_at.localtime %>
+<p>Last updated by: <%= @updated_by.first_name %> <%= @updated_by.last_name %> -  <%= @time2.strftime('%B %d, %Y - %I:%M %p') %></p>
 
 <%= button_to('Edit', edit_dashboard_path, method: :get) %>
 <%= button_to('Delete', dashboard_path, method: :delete) %>

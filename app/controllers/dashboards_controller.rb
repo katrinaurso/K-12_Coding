@@ -4,14 +4,14 @@ class DashboardsController < ApplicationController
   def index
     @admin = Admin.find(current_admin)
     @newsfeed = Newsfeed.new
-    @newsfeeds = Newsfeed.all
+    @newsfeeds = Newsfeed.where(school:current_school).reverse
   end
 
   def new
   end
 
   def create
-    @newsfeed = Newsfeed.create(content:params[:newsfeed][:content], admin:current_admin, school:current_school)
+    @newsfeed = Newsfeed.create(title:params[:newsfeed][:title], content:params[:newsfeed][:content], admin:current_admin, updated_by:current_admin, school:current_school)
     if @newsfeed.save
       flash[:notice] = 'Newsfeed added!'
     else
@@ -20,17 +20,27 @@ class DashboardsController < ApplicationController
     redirect_to dashboard_path @newsfeed
   end
 
-  def show
-    @newsfeed = Newsfeed.find(params[:id])
+  def show 
+    # Queries need to be merged into one if there is time
+    @newsfeed_check = Newsfeed.joins(:admin).select("newsfeeds.*, admins.first_name, admins.last_name").find(params[:id])
+    if current_school.id == @newsfeed_check.school_id
+      @newsfeed = @newsfeed_check
+      @updated_by = Newsfeed.joins(:updated_by).select('admins.*').find(params[:id])
+    else
+      redirect_to dashboards_path
+    end
   end
 
   def edit
     @newsfeed = Newsfeed.find(params[:id])
+    if current_school.id != @newsfeed.school_id
+      redirect_to dashboards_path
+    end
   end
 
   def update
      @newsfeed = Newsfeed.find(params[:id])
-    if @newsfeed.update(content:params[:newsfeed][:content], admin:current_admin, school:current_school)
+    if @newsfeed.update(title:params[:newsfeed][:title], content:params[:newsfeed][:content], updated_by:current_admin)
       redirect_to dashboard_path @newsfeed
     else
       flash[:errors] = @newsfeed.errors.full_messages
