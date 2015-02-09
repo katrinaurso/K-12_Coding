@@ -39,7 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Use rails-footnotes for development
-gem 'rails-footnotes', '>= 4.0.0', '<5'
+# gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 # Use Hirb for nice display of database queries in console
 gem 'hirb'

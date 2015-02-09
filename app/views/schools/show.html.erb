@@ -13,6 +13,8 @@
 	<% end %>
 <% end %>
 
+<%= image_tag(@school.logo, :alt => "Logo") %>
+
 <h1>Current Weather</h1>
 <%= @weather["data"]["current_condition"][0]["temp_F"] %> F
 <img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
@@ -23,6 +25,6 @@
 		<li><%= @school.city %>,</li>
 		<li><%= @school.state %></li>
 		<li><%= @school.zipcode %></li>
-		<li><%= button_to("Admin Dashboard", root_path, method: :get) %></li>
+		<li><%= link_to("Admin Dashboard", root_path) %></li>
 	</ul>
 </div>

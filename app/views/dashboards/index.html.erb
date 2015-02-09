@@ -1,11 +1,16 @@
-<h1>Dashboards#index</h1>
-<h2><%= @school.name %></h2>
+<h1><%= @school.name %> Dashboard</h1>
+
 <p>Welcome <%= @admin.first_name %>!</p>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
 		<p><%= error %></p>
 	<% end %>
+<% end %>
+
+<%= simple_form_for @style, url: dashboards_path do |f| %>
+	<%= f.input :style, required: false %>
+	<%= f.button :submit, 'Change Styles' %>
 <% end %>
 
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
@@ -17,14 +22,11 @@
 <% if @newsfeeds %>
 	<% @newsfeeds.each do |n| %>
 		<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>
-		<p><%= n.content %></p>
+		<p><%=raw n.content %></p>
 		<% @time = n.created_at.localtime %>
 		<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
 	<% end %>
 <% end %>	
 
-<%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>
-
-<% require 'open-uri' %>
-<% file_handle = open("http://cnn.com") %>
-<iframe id='embedded' src='http://localhost:3000/schools/<%= @school.id %>' />
+<h2>Current School Site</h2>
+<iframe id='iframe' src='/schools/<%= @school.id %>' />

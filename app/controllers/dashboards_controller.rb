@@ -28,6 +28,8 @@ class DashboardsController < ApplicationController
     if current_school.id == @newsfeed_check.school_id
       @newsfeed = @newsfeed_check
       @updated_by = Newsfeed.joins(:updated_by).select('admins.*').find(params[:id])
+      @school = current_school
+      @admin = Admin.find(current_admin)
     else
       redirect_to dashboards_path
     end
@@ -35,6 +37,8 @@ class DashboardsController < ApplicationController
 
   def edit
     @newsfeed = Newsfeed.find(params[:id])
+    @school = current_school
+    @admin = Admin.find(current_admin)
     if current_school.id != @newsfeed.school_id
       redirect_to dashboards_path
     end
