@@ -1,12 +1,11 @@
 class DashboardsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, :current_school
   layout "backend"
 
   def index
     @admin = Admin.find(current_admin)
     @newsfeed = Newsfeed.new
     @newsfeeds = Newsfeed.where(school:current_school).reverse
-    @school = current_school
   end
 
   def new
@@ -28,7 +27,6 @@ class DashboardsController < ApplicationController
     if current_school.id == @newsfeed_check.school_id
       @newsfeed = @newsfeed_check
       @updated_by = Newsfeed.joins(:updated_by).select('admins.*').find(params[:id])
-      @school = current_school
       @admin = Admin.find(current_admin)
     else
       redirect_to dashboards_path
@@ -37,7 +35,6 @@ class DashboardsController < ApplicationController
 
   def edit
     @newsfeed = Newsfeed.find(params[:id])
-    @school = current_school
     @admin = Admin.find(current_admin)
     if current_school.id != @newsfeed.school_id
       redirect_to dashboards_path

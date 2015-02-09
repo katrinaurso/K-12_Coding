@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_action :current_school
+  
   def index
   end
 
@@ -20,7 +22,6 @@ class AdminsController < ApplicationController
 
   def show
     if logged_in?
-      @school = current_school
       @admin = Admin.find(params[:id])
       render layout: "backend"
     else
@@ -30,7 +31,6 @@ class AdminsController < ApplicationController
 
   def edit
     if logged_in?
-      @school = current_school
       @admin = Admin.find(params[:id])
       render layout: "backend"
     else

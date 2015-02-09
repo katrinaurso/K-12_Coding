@@ -14,7 +14,7 @@ module SessionsHelper
 	end
 
 	def current_school
-		@current_school ||= School.find(session[:school_id]) if session[:school_id]
+		@school ||= School.find(session[:school_id]) if session[:school_id]
 	end
 
 	def logged_in?
