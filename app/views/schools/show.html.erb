@@ -2,7 +2,7 @@
 <title><%= @school.name %></title>
 <% end %>
 
-<h1><%= @school.name %></h1>
+<h1 id="header"><%= @school.name %></h1>
 
 <% if @newsfeed %>
 	<% @newsfeed.each do |news| %>
@@ -17,5 +17,12 @@
 <%= @weather["data"]["current_condition"][0]["temp_F"] %> F
 <img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
 
-
-<%= button_to("Admin Dashboard", root_path, method: :get) %>
+<div id="footer">
+	<ul>
+		<li><%= @school.street %></li>
+		<li><%= @school.city %>,</li>
+		<li><%= @school.state %></li>
+		<li><%= @school.zipcode %></li>
+		<li><%= button_to("Admin Dashboard", root_path, method: :get) %></li>
+	</ul>
+</div>
