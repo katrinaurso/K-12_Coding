@@ -25,4 +25,6 @@
 
 <%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>
 
+<% require 'open-uri' %>
+<% file_handle = open("http://cnn.com") %>
 <iframe id='embedded' src='http://localhost:3000/schools/<%= @school.id %>' />

@@ -29,9 +29,13 @@ class AdminsController < ApplicationController
   end
 
   def edit
-    @school = current_school
-    @admin = Admin.find(params[:id])
-    render layout: "backend"
+    if logged_in?
+      @school = current_school
+      @admin = Admin.find(params[:id])
+      render layout: "backend"
+    else
+      redirect_to '/'
+    end
   end
 
   def update

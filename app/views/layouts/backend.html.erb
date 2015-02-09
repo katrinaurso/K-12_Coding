@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>K-12 Coding Admin Dashboard</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
@@ -12,7 +12,7 @@
 			<a href="<%= dashboards_path %>"><li>Dashboard Home</li></a>
 			<a href="<%= school_path @school.id %>"><li>School View</li></a>
 			<a href="<%= admin_path @admin.id %>"><li>Profile</li></a>
-			<button>Logout</button>
+			<li><%= button_to('Logout', logout_path, method: :delete) %></li>
 		</ul>
 	</div>
 	<% if flash[:notice] %>

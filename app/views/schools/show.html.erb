@@ -13,4 +13,9 @@
 	<% end %>
 <% end %>
 
+<h1>Current Weather</h1>
+<%= @weather["data"]["current_condition"][0]["temp_F"] %> F
+<img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
+
+
 <%= button_to("Admin Dashboard", root_path, method: :get) %>

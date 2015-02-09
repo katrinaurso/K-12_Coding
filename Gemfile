@@ -46,3 +46,6 @@ gem 'hirb'
 
 # Use Simpleform to easily create forms
 gem 'simple_form'
+
+# JSON
+gem 'json', '~>1.8.1'
