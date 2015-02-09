@@ -3,8 +3,8 @@ class AdminsController < ApplicationController
   end
 
   def new
-    layout "login_registration"
     @admin = Admin.new
+    render layout: "login_registration"
   end
 
   def create
