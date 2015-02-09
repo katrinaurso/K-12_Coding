@@ -1,10 +1,16 @@
-<h1>Schools#show</h1>
+<% content_for :title do %>
+<title><%= @school.name %></title>
+<% end %>
+
+<h1><%= @school.name %></h1>
 
 <% if @newsfeed %>
 	<% @newsfeed.each do |news| %>
 		<h2><%= news.title %></h2>
-		<p><%= news.content %></p>
+		<p><%=raw news.content %></p>
 		<% @time = news.created_at.localtime %>
 		<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
 	<% end %>
 <% end %>
+
+<%= button_to("Admin Dashboard", root_path, method: :get) %>

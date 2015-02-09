@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= yield :title %>
+	<title>K-12 Coding Admin</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
@@ -11,7 +11,15 @@
 		<p><%= flash[:notice] %></p>
 	<% end %>
 
-	<%= yield %>
+	<div class="rl">
+		<h1>Register</h1>
+		<%= yield :register %>
+	</div>
+
+	<div class="rl">
+		<h1>Login</h1>
+		<%= render template: "/sessions/new" %>
+	</div>
 
 </body>
 </html>

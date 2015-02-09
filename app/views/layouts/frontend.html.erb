@@ -7,11 +7,7 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<% if flash[:notice] %>
-		<p><%= flash[:notice] %></p>
-	<% end %>
-
 	<%= yield %>
-
+	<%= button_to("Admin Dashboard", root_path) %>
 </body>
 </html>

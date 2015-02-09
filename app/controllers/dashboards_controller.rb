@@ -1,11 +1,12 @@
 class DashboardsController < ApplicationController
   before_action :require_logged_in
+  layout "backend"
 
   def index
     @admin = Admin.find(current_admin)
     @newsfeed = Newsfeed.new
     @newsfeeds = Newsfeed.where(school:current_school).reverse
-    @school = current_school.id
+    @school = current_school
   end
 
   def new

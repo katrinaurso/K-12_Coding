@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= yield :title %>
+	<title>K-12 Coding Admin Dashboard</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="nav">
+		<ul>
+			<a href="<%= dashboards_path %>"><li>Dashboard Home</li></a>
+			<a href="<%= school_path @school.id %>"><li>School View</li></a>
+			<a href="<%= admin_path @admin.id %>"><li>Profile</li></a>
+			<button>Logout</button>
+		</ul>
+	</div>
 	<% if flash[:notice] %>
 		<p><%= flash[:notice] %></p>
 	<% end %>

@@ -1,5 +1,5 @@
-<div class="rl">
-	<h1>Register</h1>
+<% content_for :register do %>
+
 	<% if flash[:errors] %>
 		<% flash[:errors].each do |error| %>
 			<p><%= error %></p>
@@ -14,9 +14,6 @@
 		<%= f.input :pass, required: false, label: 'Password' %>
 		<%= f.input :pass_confirmation, label: 'Password Confirmation' %>
 		<%= f.button :submit, 'Register' %>
-	<% end %>
-</div>
 
-<div class="rl">
-	<%= render template: '/sessions/new' %>
-</div>
+	<% end %>
+<% end %>

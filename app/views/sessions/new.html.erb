@@ -1,7 +1,14 @@
-<h1>Login</h1>
+<!-- Login -->
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
 
 <%= simple_form_for(:session, url: sessions_path) do |f| %>
 	<%= f.input :email, required: false %>
 	<%= f.input :pass, required: false, label: 'Password' %>
 	<%= f.button :submit, 'Login' %>
 <% end %>
+

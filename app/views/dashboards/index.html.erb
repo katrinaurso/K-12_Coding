@@ -1,6 +1,6 @@
 <h1>Dashboards#index</h1>
+<h2><%= @school.name %></h2>
 <p>Welcome <%= @admin.first_name %>!</p>
-<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get %>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
@@ -25,4 +25,4 @@
 
 <%= button_to 'Logout', { action:'destroy', controller: :sessions }, method: :delete %>
 
-<iframe id='embedded' src='http://localhost:3000/schools/<%= @school %>' />
+<iframe id='embedded' src='http://localhost:3000/schools/<%= @school.id %>' />

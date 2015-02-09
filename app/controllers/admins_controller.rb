@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   end
 
   def new
+    layout "login_registration"
     @admin = Admin.new
   end
 
@@ -19,14 +20,18 @@ class AdminsController < ApplicationController
 
   def show
     if logged_in?
+      @school = current_school
       @admin = Admin.find(params[:id])
+      render layout: "backend"
     else
       redirect_to '/'
     end
   end
 
   def edit
+    @school = current_school
     @admin = Admin.find(params[:id])
+    render layout: "backend"
   end
 
   def update

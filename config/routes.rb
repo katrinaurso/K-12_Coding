@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :dashboards
   resources :schools, only: [:show]
   delete 'logout' => 'sessions#destroy'
+  # get 'dphs', to: 'schools#show', as: :1
 
 
   # The priority is based upon order of creation: first created -> highest priority.
