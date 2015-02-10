@@ -6,22 +6,60 @@
 	background-color: #539a71;
 }
 
+.company{
+	color: white;
+	font-size: 40px;
+	margin: 0 auto;
+	display: inline-block;
+	margin-left: 5%;
+	vertical-align: middle;
+}
+
 ul, li {
 	list-style: none;
 	display: inline-block;
 }
 
 ul.nav {
-	margin-left: 60%;
+	margin-left: 30%;
 }
 
 li.nav {
 	margin: 0 15px;
 }
 
+.dashboard_name{
+	margin-left: 10%;
+	margin-right: 20%;
+	display: inline-block;
+}
+
+.welcome{
+	display: inline-block;
+}
+
+p{
+	margin-left: 10%;
+}
+
+#newsfeed_title{
+	color: black;
+	font-size: 18px;
+	width: 900px;
+	margin-left: 10%;
+}
+
 textarea {
 	height: 150px;
 	width: 300px;
+	background-color: black;
+	color: white;
+	font-size: 18px;
+	height: 300px;
+	width: 900px;
+	overflow: auto;
+	margin-left: 10%;
+
 }
 
 a {
@@ -33,30 +71,70 @@ a.nav {
 	color: white;
 }
 
+.button_to input{
+	background-color: #539a71;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100px;
+	display: inline-block;
+	margin-left: 60%;
+}
+
 .btn {
 	background-color: #539a71;
 	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100px;
+	display: inline-block;
+	position: absolute;
+	left: 70%;
 }
 
 input.nav {
 	background-color: white;
 	color: #539a71;
+	font-weight: bold;
 	border: none;
 	border-radius: 5px;
 	padding: 5px;
+	width: 75px;
 }
 
-iframe {
-	width: 1000px;
-	height: 700px;
-	border: 5px solid #539a71;
-	-ms-transform: scale(0.5);
-	-moz-transform: scale(0.5);
-	-o-transform: scale(0.5);
-	-webkit-transform: scale(0.5);
-	transform: scale(0.5);
+iframe{
+	width: 1200px;
+	height: 800px;
+	-ms-transform: scale(.75);
+	-moz-transform: scale(.75);
+	-o-transform: scale(.75);
+	-webkit-transform: scale(.75);
+	transform: scale(.75);
+
+	-ms-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
 }
 
-p {
+.live_view{
+	font-size: 40px;
+	margin-left:475px;
+	margin-top:100px;
+}
+
+
+#iframe {
+	left: 50%;
+	margin-left: 100px;
+
+}
+
+#nav p {
 	line-height: 25px;
+	margin-left: 5%;
 }
