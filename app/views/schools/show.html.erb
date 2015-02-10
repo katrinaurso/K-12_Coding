@@ -19,6 +19,8 @@
 <%= @weather["data"]["current_condition"][0]["temp_F"] %> F
 <img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
 
+<div id="calendar"></div>
+
 <div id="footer">
 	<ul>
 		<li><%= @school.street %></li>
