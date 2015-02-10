@@ -2,11 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#nav {
+	background-color: #539a71;
+}
+
 ul, li {
 	list-style: none;
 	display: inline-block;
 }
 
+ul {
+	margin-left: 60%;
+}
+
+li.nav {
+	margin: 0 15px;
+}
 
 textarea {
 	height: 150px;
@@ -18,9 +29,21 @@ a {
 	color: #539a71;
 }
 
+a.nav {
+	color: white;
+}
+
 .btn {
 	background-color: #539a71;
 	color: white;
+}
+
+input.nav {
+	background-color: white;
+	color: #539a71;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 iframe {
