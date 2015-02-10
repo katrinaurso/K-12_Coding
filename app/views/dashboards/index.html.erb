@@ -8,8 +8,6 @@
 	<% end %>
 <% end %>
 
-<%= render template: "/styles/edit" %>
-
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 	<%= f.input :title, required: false %>
 	<%= f.input :content, required: false %>

@@ -1,3 +1,99 @@
 // Place all the styles related to the Schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+	background-color: #02175a;
+	font-family: sans-serif;
+}
+
+	#container{
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+		#header{
+			width: 1000px;
+			height: 250px;
+			background-color: gray;
+			display: inline-block;
+		}
+
+		.school{
+			color: white;
+			font-size: 50px;
+			padding-left: 20px;
+			display: inline-block;
+			margin-top: 150px;
+			vertical-align: top;
+		}
+
+		#header img{
+			display: inline-block;
+			margin-left: 80px;
+			margin-top: 15px;
+			vertical-align: top;
+		}
+
+			.newsfeed{
+				background-color: white;
+				width: 600px;
+				display: inline-block;
+				height: 980px;
+				/*line-height: 0px;*/
+			}
+
+				h2{
+					padding-left: 15px;
+					padding-right: 15px;
+					padding-top: 15px;
+				}
+
+				p{
+					padding-left: 20px;
+					padding-right: 20px;
+					font-size: 18px;
+				}
+
+				.timestamp{
+					font-size: 14px;
+				}
+
+			.sidebar{
+				background-color: white;
+				width: 360px;
+				height: 950px;
+				display: inline-block;
+				position: absolute;
+				border-left: 10px solid #02175a;
+				padding: 15px;
+			}
+
+				.sidebar h1{
+					color: black;
+					font-size: 24px;
+					text-align: center;
+
+				}
+
+				.sidebar h2{
+					text-align: center;
+					font-size: 60px;
+				}
+
+				.sidebar img{
+					width: 200px;
+					height: 200px;
+					display: block;
+					margin: 0 auto;
+				}
+
+			#footer{
+				color: white;
+				letter-spacing: 2px;
+				text-align: center;
+			}
+
+
+
