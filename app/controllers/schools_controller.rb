@@ -2,11 +2,7 @@ require 'json'
 require 'net/http'
 require 'open-uri'
 
-class SchoolsController < ApplicationController 
-  
-  def index
-  end
-
+class SchoolsController < ApplicationController   
   def show
     @style = Style.select(:current).find(params[:id])
     puts @style

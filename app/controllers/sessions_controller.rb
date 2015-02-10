@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
-        render layout: "login_registration"
-
+    render layout: "login_registration"
   end
 
   def create
