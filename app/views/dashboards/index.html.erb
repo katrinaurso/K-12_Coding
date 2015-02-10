@@ -1,8 +1,7 @@
-<h1><%= @school.name %> Dashboard</h1>
+<h1 class="dashboard_name"><%= @school.name %> Dashboard</h1>
 
-<p>Welcome <%= @admin.first_name %>!</p>
+<h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
 
-<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
@@ -10,21 +9,29 @@
 	<% end %>
 <% end %>
 
-<%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
-	<%= f.input :title, required: false %>
-	<%= f.input :content, required: false %>
-	<%= f.button :submit, 'Publish' %>
-<% end %>
-
-<% if @newsfeeds %>
-	<% @newsfeeds.each do |n| %>
-		<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>
-		<p><%=raw n.content %></p>
-		<% @time = n.created_at.localtime %>
-		<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+<div id="dashboard_posts"
+	<%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
+		<h2>Title:</h2>
+		<%= f.input :title, label: false, required: false %>
+		<h2>Content:</h2>
+		<%= f.input :content, label: false, required: false %>
+		<%= f.button :submit, 'Publish' %>
 	<% end %>
-<% end %>	
+</div>
 
-<h2>Current School Site</h2>
-<iframe id='iframe' src='/schools/<%= @school.id %>' />
+<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
+
+<div id="dashboard_newsfeed"
+	<% if @newsfeeds %>
+		<% @newsfeeds.each do |n| %>
+			<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>
+			<p><%=raw n.content %></p>
+			<% @time = n.created_at.localtime %>
+			<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+		<% end %>
+	<% end %>	
+</div>
+
+<h2 class="live_view">Live View</h2>
+<div id="iframe"><iframe id='iframe' src='/schools/<%= @school.id %>' /></div>
 
