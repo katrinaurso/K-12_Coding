@@ -8,7 +8,7 @@
 	<% end %>
 <% end %>
 
-<%= render template: "/styles/edit" %>
+<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
 
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 	<%= f.input :title, required: false %>

@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
 
   def index
     @admin = Admin.find(current_admin)
-    @style = Style.joins(:school).where(school_id:current_school)
+    @style = Style.where(school:current_school)
     @newsfeed = Newsfeed.new
     @newsfeeds = Newsfeed.where(school:current_school).reverse
   end

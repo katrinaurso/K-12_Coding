@@ -1,5 +1,10 @@
-<%= simple_form_for @style, url:  url_for(action: 'update', id: @school.id, controller: 'styles'), method: 'patch' do |f| %>
+<h1>Edit Styles for <%= @school.name %></h1>
+
+<%= simple_form_for @style, url:  style_path, method: :put  do |f| %>
 	<%= f.input :current, required: false %>
-	<%= f.button :submit, 'Add Style' %>
+	<%= f.button :submit, 'Edit Style' %>
 <% end %>
+
+<h2>Previous Style</h2>
+<%= @style.previous %>
 
