@@ -11,17 +11,15 @@
 
 <div id="dashboard_posts"
 	<%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
-		<h2>Title:</h2>
-		<%= f.input :title, label: false, required: false %>
-		<h2>Content:</h2>
-		<%= f.input :content, label: false, required: false %>
-		<%= f.button :submit, 'Publish' %>
+		<%= f.input :title, label: false, required: false, placeholder: "Title" %>
+		<%= f.input :content, label: false, required: false, placeholder: "Post content using HTML tags. Then edit your CSS Stylesheet by clicking 'Edit Style' below!" %>
+		<%= f.button :submit, 'Publish', :class => "publish_button" %>
 	<% end %>
 </div>
 
-<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
+<%= button_to("Edit Style", edit_style_path(@school.id), method: :get) %>
 
-<div id="dashboard_newsfeed"
+<div id="dashboard_newsfeed">
 	<% if @newsfeeds %>
 		<% @newsfeeds.each do |n| %>
 			<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>

@@ -4,6 +4,7 @@
 
 #nav {
 	background-color: #539a71;
+	white-space: nowrap;
 }
 
 .company{
@@ -44,14 +45,14 @@ p{
 
 #newsfeed_title{
 	color: black;
+	font-weight: bold;
 	font-size: 18px;
-	width: 900px;
+	width: 920px;
 	margin-left: 10%;
+	padding: 10px;
 }
 
 textarea {
-	height: 150px;
-	width: 300px;
 	background-color: black;
 	color: white;
 	font-size: 18px;
@@ -59,6 +60,7 @@ textarea {
 	width: 900px;
 	overflow: auto;
 	margin-left: 10%;
+	padding: 20px;
 
 }
 
@@ -83,7 +85,7 @@ a.nav {
 	margin-left: 60%;
 }
 
-.btn {
+.publish_button {
 	background-color: #539a71;
 	color: white;
 	font-weight: bold;
@@ -127,14 +129,23 @@ iframe{
 	margin-top:100px;
 }
 
-
 #iframe {
 	left: 50%;
 	margin-left: 100px;
-
 }
 
 #nav p {
 	line-height: 25px;
 	margin-left: 5%;
 }
+
+
+/*Show Newsfeed Post*/
+
+#backendBody .show_title{
+	margin-left: 5%;
+}
+
+/*Edit Newsfeed Post*/
+
+/*Edit Style*/
