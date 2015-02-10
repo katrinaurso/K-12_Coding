@@ -2,13 +2,13 @@
 
 <p>Welcome <%= @admin.first_name %>!</p>
 
+<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
+
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
 		<p><%= error %></p>
 	<% end %>
 <% end %>
-
-<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
 
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 	<%= f.input :title, required: false %>

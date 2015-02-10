@@ -16,10 +16,11 @@ class DashboardsController < ApplicationController
     @newsfeed = Newsfeed.create(title:params[:newsfeed][:title], content:params[:newsfeed][:content], admin:current_admin, updated_by:current_admin, school:current_school)
     if @newsfeed.save
       flash[:notice] = 'Newsfeed added!'
+      redirect_to dashboard_path @newsfeed
     else
       flash[:errors] = @newsfeed.errors.full_messages
+      redirect_to dashboards_path
     end
-    redirect_to dashboard_path @newsfeed
   end
 
   def show 

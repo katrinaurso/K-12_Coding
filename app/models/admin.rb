@@ -10,7 +10,7 @@ class Admin < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 20 }
 	validates :school, presence: true
 	validates :email, presence: true, format: { with: email_regex }, uniqueness: { case_sensitive: false }
-	validates :pass, presence: true, confirmation: true
+	validates :pass, presence: true, length: { in: 6..15 }, confirmation: true
 
 	before_save :encrypt_pass
 	before_save do 
