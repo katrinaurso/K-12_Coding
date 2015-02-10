@@ -6,13 +6,13 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body id="backendBody">
 	<div id="nav">
-		<ul>
-			<a href="<%= dashboards_path %>"><li>Dashboard Home</li></a>
-			<a href="<%= school_path @school.id %>"><li>School View</li></a>
-			<a href="<%= admin_path @admin.id %>"><li>Profile</li></a>
-			<li><%= button_to('Logout', logout_path, method: :delete) %></li>
+		<ul class="nav">
+			<a class="nav" href="<%= dashboards_path %>"><li class="nav">Dashboard Home</li></a>
+			<a class="nav" href="<%= school_path @school.id %>"><li class="nav">School View</li></a>
+			<a class="nav" href="<%= admin_path @admin.id %>"><li class="nav">Profile</li></a>
+			<li class="nav"><%= button_to 'Logout', logout_path, method: :delete, :class => 'nav' %></li>
 		</ul>
 	</div>
 	<% if flash[:notice] %>

@@ -2,12 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
  
-/*body {
+#backendBody {
+	background-color: white;
 	margin: 0 auto;
 	width: 100%;
 	height: auto;
 	font-family: sans-serif;
-	background-color: #02175a;
+}
+
+#loginH1 {
+	background-color: #539a71;
+	height: 45px;
+	margin: 0;
+	padding: 15px;
+	color: white;
 }
 
 .rl {
@@ -19,4 +27,3 @@
 input, select {
 	margin: 10px;
 }
-*/
