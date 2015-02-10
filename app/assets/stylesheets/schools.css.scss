@@ -65,7 +65,7 @@ body{
 				height: 950px;
 				display: inline-block;
 				position: absolute;
-				border-left: 10px solid #02175a;
+				border-left: 8px solid #02175a;
 				padding: 15px;
 			}
 
@@ -73,12 +73,13 @@ body{
 					color: black;
 					font-size: 24px;
 					text-align: center;
+					margin-top: 40px;
 
 				}
 
 				.sidebar h2{
 					text-align: center;
-					font-size: 60px;
+					font-size: 40px;
 				}
 
 				.sidebar img{
@@ -88,8 +89,33 @@ body{
 					margin: 0 auto;
 				}
 
+				#calendar{
+					width: 90%;
+					margin: 0 auto;
+					padding-bottom: 40px;
+					border-bottom: 8px solid #02175a;
+				}
+
+					#calendar h2{
+						font-size: 40px;
+					}
+
+					#calendar .fc-today-button{
+						margin-top: 15px;
+					}
+
+					#calendar .fc-prev-button{
+						margin-top: 15px;
+					}
+
+					#calendar .fc-next-button{
+						margin-top: 15px;
+					}
+
 			#footer{
 				color: white;
 				letter-spacing: 2px;
 				text-align: center;
 			}
+
+
