@@ -6,8 +6,8 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
-	<h1>K-12 Coding Dashboard</h1>
+<body id="backendBody">
+	<h1 id="loginH1">K-12 Coding Dashboard</h1>
 	<% if flash[:notice] %>
 		<p><%= flash[:notice] %></p>
 	<% end %>
