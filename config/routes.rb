@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-
-
   root 'admins#new'
   resources :admins
   resources :sessions, only: [:new, :create, :destroy]
   resources :dashboards
   resources :schools, only: [:show]
+  resources :styles, only: [:edit, :update]
   delete 'logout' => 'sessions#destroy'
   # get 'dphs', to: 'schools#show', as: :1
 

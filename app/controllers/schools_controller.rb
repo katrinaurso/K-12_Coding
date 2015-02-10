@@ -2,10 +2,7 @@ require 'json'
 require 'net/http'
 require 'open-uri'
 
-
-class SchoolsController < ApplicationController
-
- 
+class SchoolsController < ApplicationController 
   
   def index
   end

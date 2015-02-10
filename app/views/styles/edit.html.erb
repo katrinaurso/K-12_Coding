@@ -1,0 +1,5 @@
+<%= simple_form_for @style, url:  url_for(action: 'update', id: @school.id, controller: 'styles'), method: 'patch' do |f| %>
+	<%= f.input :current, required: false %>
+	<%= f.button :submit, 'Add Style' %>
+<% end %>
+

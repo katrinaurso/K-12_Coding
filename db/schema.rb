@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209212419) do
+ActiveRecord::Schema.define(version: 20150209224804) do
 
   create_table "admins", force: true do |t|
     t.string   "first_name"
@@ -50,5 +50,15 @@ ActiveRecord::Schema.define(version: 20150209212419) do
     t.integer  "zipcode"
     t.string   "logo"
   end
+
+  create_table "styles", force: true do |t|
+    t.integer  "school_id"
+    t.text     "current"
+    t.text     "previous"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "styles", ["school_id"], name: "index_styles_on_school_id"
 
 end

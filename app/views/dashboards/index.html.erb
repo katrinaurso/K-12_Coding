@@ -8,6 +8,8 @@
 	<% end %>
 <% end %>
 
+<%= render template: "/styles/edit" %>
+
 <%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 	<%= f.input :title, required: false %>
 	<%= f.input :content, required: false %>
@@ -25,3 +27,4 @@
 
 <h2>Current School Site</h2>
 <iframe id='iframe' src='/schools/<%= @school.id %>' />
+
