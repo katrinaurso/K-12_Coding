@@ -2,6 +2,8 @@
 
 <p>Welcome <%= @admin.first_name %>!</p>
 
+<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
+
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
 		<p><%= error %></p>

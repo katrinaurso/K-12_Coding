@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :schools, only: [:show]
   resources :styles, only: [:edit, :update]
   delete 'logout' => 'sessions#destroy'
-  # get 'dphs', to: 'schools#show', as: :1
-
+  get 'dphs', to: redirect('/schools/1')
+  get 'chs', to: redirect('/schools/2')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

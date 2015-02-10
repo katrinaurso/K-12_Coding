@@ -49,3 +49,7 @@ gem 'simple_form'
 
 # JSON
 gem 'json', '~>1.8.1'
+
+# Calendar
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

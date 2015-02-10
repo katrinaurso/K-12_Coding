@@ -40,6 +40,9 @@ GEM
     coffee-script-source (1.9.0)
     erubis (2.7.0)
     execjs (2.3.0)
+    fullcalendar-rails (2.2.5.1)
+      jquery-rails (>= 3.1.1, < 5.0.0)
+      momentjs-rails (~> 2.8, >= 2.8.4)
     hike (1.2.3)
     hirb (0.7.3)
     i18n (0.7.0)
@@ -54,6 +57,8 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     minitest (5.5.1)
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
     multi_json (1.10.1)
     rack (1.5.2)
     rack-test (0.6.3)
@@ -119,10 +124,12 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.0)
+  fullcalendar-rails
   hirb
   jbuilder (~> 2.0)
   jquery-rails
   json (~> 1.8.1)
+  momentjs-rails
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

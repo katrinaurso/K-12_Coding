@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
 
   def index
     @admin = Admin.find(current_admin)
-    @style = Style.joins(:school).where(school_id:current_school)
+    @style = Style.where(school:current_school)
     @newsfeed = Newsfeed.new
     @newsfeeds = Newsfeed.where(school:current_school).reverse
   end
@@ -16,10 +16,11 @@ class DashboardsController < ApplicationController
     @newsfeed = Newsfeed.create(title:params[:newsfeed][:title], content:params[:newsfeed][:content], admin:current_admin, updated_by:current_admin, school:current_school)
     if @newsfeed.save
       flash[:notice] = 'Newsfeed added!'
+      redirect_to dashboard_path @newsfeed
     else
       flash[:errors] = @newsfeed.errors.full_messages
+      redirect_to dashboards_path
     end
-    redirect_to dashboard_path @newsfeed
   end
 
   def show 
