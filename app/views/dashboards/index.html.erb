@@ -1,6 +1,7 @@
-<h1 class="dashboard_name"><%= @school.name %> Dashboard</h1>
-
-<h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
+<div id="dashboard_header">
+	<h1 class="dashboard_name"><%= @school.name %> Dashboard</h1>
+	<h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
+</div>
 
 
 <% if flash[:errors] %>

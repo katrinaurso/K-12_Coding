@@ -41,6 +41,25 @@ li.nav {
 	margin: 0 15px;
 }
 
+.logout_button {
+	background-color: white;
+	color: #539a71;
+	font-size: 14px;
+	font-weight: bold;
+	height: 27px;
+	width: 75px;
+	padding: 2px;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: .5px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+#dashboard_header{
+	white-space: nowrap;
+}
+
 .dashboard_name{
 	margin-left: 10%;
 	margin-right: 20%;
@@ -54,6 +73,7 @@ li.nav {
 #dashboard_newsfeed{
 	margin-left:10%;
 	margin-right:10%;
+	max-width: 1000px;
 }
 
 #newsfeed_title{
@@ -119,19 +139,6 @@ a.nav {
 	letter-spacing: .5px;
 }
 
-.logout_button {
-	background-color: white;
-	color: #539a71;
-	font-size: 14px;
-	font-weight: bold;
-	height: 27px;
-	width: 75px;
-	padding: 2px;
-	border: none;
-	border-radius: 5px;
-	letter-spacing: .5px;
-}
-
 iframe{
 	width: 1200px;
 	height: 800px;
@@ -165,13 +172,3 @@ iframe{
 	height: 50px;
 	color: white;
 }
-
-/*Show Newsfeed Post*/
-
-#backendBody .show_title{
-	margin-left: 5%;
-}
-
-/*Edit Newsfeed Post*/
-
-/*Edit Style*/
