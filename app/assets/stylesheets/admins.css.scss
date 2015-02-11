@@ -6,7 +6,7 @@
 	background-color: white;
 	margin: 0 auto;
 	width: 100%;
-	height: auto;
+	min-height: 600px;
 	font-family: sans-serif;
 }
 
@@ -16,8 +16,8 @@
 }
 
 #loginH1 {
-	margin: 0 auto;
 	padding: 20px;
+	margin-left: 20px;
 	color: white;
 	vertical-align: top;
 	display: inline-block;
@@ -26,7 +26,7 @@
 .login{
 	display: inline-block;
 	margin-top: 40px;
-	margin-left: 200px;
+	margin-left: 180px;
 }
 
 	.session_email, .session_pass, .btn{
@@ -44,16 +44,50 @@
 		border: none;
 		border-radius: 5px;
 		margin-left: 20px;
+		letter-spacing: .5px;
 	}
 
+#about{
+	display: inline-block;
+	margin-left: 300px;
+	vertical-align: top;
+	color: #539a71;
+	width: 500px;
+	right: 50%;
+	position: absolute;
+	margin-top: 30px;
+	border-right: 5px solid #539a71;
+	
+}
+
+#about p{
+	font-size: 18px;
+	line-height: 30px;
+	margin-right: 60px;
+}
 
 .register {
 	display: inline-block;
-	margin-left: 800px;
+	left: 60%;
+	position: absolute;
 	vertical-align: top;
-	white-space: nowrap;
 	color: #539a71;
+	white-space: nowrap;
+	margin-top: 30px;
 }
+
+	.register_button{
+		background-color: #539a71;
+		color: white;
+		font-size: 14px;
+		font-weight: bold;
+		height: 30px;
+		width: 210px;
+		padding: 2px;
+		border: none;
+		border-radius: 5px;
+		letter-spacing: .5px;
+	}
 
 input, select {
 	margin-bottom: 20px;
@@ -61,4 +95,17 @@ input, select {
 	height: 20px;
 	width: 200px;
 	font-size: 14px;
+}
+
+.editprofile_button{
+	background-color: #539a71;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	width: 210px;
+	padding: 2px;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: .5px;
 }
