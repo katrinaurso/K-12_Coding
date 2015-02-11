@@ -13,7 +13,7 @@
 			<a class="nav" href="<%= dashboards_path %>"><li class="nav">Dashboard</li></a>
 			<a class="nav" href="<%= admin_path @admin.id %>"><li class="nav">Profile</li></a>
 			<a class="nav" href="<%= school_path @school.id %>"><li class="nav">School View</li></a>
-			<li class="nav"><%= button_to 'Logout', logout_path, method: :delete, :class => 'nav' %></li>
+			<li class="nav"><%= button_to 'Logout', logout_path, method: :delete, :class => 'logout_button' %></li>
 		</ul>
 	</div>
 
