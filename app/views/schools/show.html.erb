@@ -1,45 +1,11 @@
-<% content_for :title do %>
-<title><%= @school.name %></title>
-<% end %>
-
-<style type="text/css">
-	<%=raw @style.current %>
-</style>
-	
-<div id="container">
-
-	<div id="header">
-		<h1 class="school"><%= @school.name %></h1>
-		<%= image_tag(@school.logo, :alt => "Logo") %>
-	</div>
-
-	<div class="newsfeed">
-		<% if @newsfeed %>
-			<% @newsfeed.each do |news| %>
-				<h2><%= news.title %></h2>
-				<p><%=raw news.content %></p>
-				<% @time = news.created_at.localtime %>
-				<p class="timestamp"><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
-			<% end %>
-		<% end %>
-	</div>
-
-	<div class="sidebar">
-		<div id="calendar"></div>
-			<h1>Current Weather in<br><%= @school.city %>, <%= @school.state %></h1>
-			<h2><%= @weather["data"]["current_condition"][0]["temp_F"] %>° F</h2>
-			<img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
+<% if @newsfeed %>
+	<% @newsfeed.each do |news| %>
+		<div id="<%= news.id %>" class="news">
+			<h2><%= news.title %></h2>
+			<p><%=raw news.content %></p>
+			<% @time = news.created_at.localtime %>
+			<p class="timestamp"><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+			<button class="news_button">Home</button>
 		</div>
-	</div>
-
-	<div id="footer">
-		<ul>
-			<li><%= @school.street %> |</li>
-			<li><%= @school.city %>,</li>
-			<li><%= @school.state %> |</li>
-			<li><%= @school.zipcode %> |</li>
-			<li><%= link_to("Admin Dashboard", root_path) %></li>
-		</ul>
-	</div>
-
-</div>
+	<% end %>
+<% end %>

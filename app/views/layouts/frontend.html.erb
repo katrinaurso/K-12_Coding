@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= yield :title %>
+	<title><%= @school.name %></title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
+	<style type="text/css">
+		<%=raw @style.current %>
+	</style>	
 </head>
 <body>
-	<%= yield %>
+	<div id="container">
+
+		<div id="header">
+			<h1 class="school"><%= @school.name %></h1>
+			<%= image_tag(@school.logo, :alt => "Logo") %>
+		</div>
+
+		<div class="newsfeed">
+			<%= yield %>
+		</div>
+
+		<div class="sidebar">
+			<div id="calendar"></div>
+			<h1>Current Weather in<br><%= @school.city %>, <%= @school.state %></h1>
+			<h2><%= @weather["data"]["current_condition"][0]["temp_F"] %>° F</h2>
+			<img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
+		</div>
+
+		<div id="footer">
+			<ul>
+				<li><%= @school.street %> |</li>
+				<li><%= @school.city %>,</li>
+				<li><%= @school.state %> |</li>
+				<li><%= @school.zipcode %> |</li>
+				<li><%= link_to("Admin Dashboard", root_path) %></li>
+			</ul>
+		</div>
+
+	</div>
 	
 	<%= button_to("Admin Dashboard", root_path) %>
 </body>
-</html>
+</html>	

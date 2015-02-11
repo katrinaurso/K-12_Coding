@@ -2,13 +2,15 @@ require 'json'
 require 'net/http'
 require 'open-uri'
 
-class SchoolsController < ApplicationController   
+class SchoolsController < ApplicationController 
+  layout "frontend"
+
   def show
     @style = Style.select(:current).find(params[:id])
     puts @style
   	@school = School.find(params[:id])
   	@id = params[:id].to_i
-  	@newsfeed = Newsfeed.where(school:params[:id]).reverse
+    @newsfeed = Newsfeed.where(school:params[:id]).reverse
 
 	  $weather_uri = "https://api.worldweatheronline.com/free/v1/weather.ashx?key=jtpc4myth9fwxjgwz9fh5fw5&q=#{@school.zipcode}&fx=no&format=json"
 
