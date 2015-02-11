@@ -1,6 +1,7 @@
-<h1 class="dashboard_name"><%= @school.name %> Dashboard</h1>
-
-<h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
+<div id="dashboard_header">
+	<h1 class="dashboard_name"><%= @school.name %> Dashboard</h1>
+	<h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
+</div>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
@@ -16,7 +17,7 @@
 	<% end %>
 </div>
 
-<%= button_to("Edit Style", edit_style_path(@school.id), method: :get) %>
+<%= button_to("Edit Style", edit_style_path(@school.id), method: :get, :class => "editstyle_button") %>
 
 <div id="dashboard_newsfeed">
 	<% if @newsfeeds %>

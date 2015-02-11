@@ -2,7 +2,7 @@
 
 <%= simple_form_for @style, url:  style_path, method: :put  do |f| %>
 	<%= f.input :current, label:false, required: false, placeholder: "Write and edit CSS!" %>
-	<%= f.button :submit, 'Update Style', {class: "style_update"} %>
+	<%= f.button :submit, 'Update Style', {class: "styleupdate_button"} %>
 <% end %>
 
 <h2 class="edit_style">Previous Style</h2>
