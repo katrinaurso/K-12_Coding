@@ -9,11 +9,11 @@
 	<% end %>
 <% end %>
 
-<div id="dashboard_posts"
+<div id="dashboard_posts">
 	<%= simple_form_for @newsfeed, url: dashboards_path do |f| %>
 		<%= f.input :title, label: false, required: false, placeholder: "Title" %>
 		<%= f.input :content, label: false, required: false, placeholder: "Post content using HTML tags. Then edit your CSS Stylesheet by clicking 'Edit Style' below!" %>
-		<%= f.button :submit, 'Publish', :class => "publish_button" %>
+		<%= f.button :submit, 'Publish', class: 'publish_button' %>
 	<% end %>
 </div>
 

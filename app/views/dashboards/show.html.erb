@@ -1,6 +1,6 @@
 <h1 class="show_title"><%= @newsfeed.title %></h1>
 
-<p><%= @newsfeed.content %></p>
+<p><%=raw @newsfeed.content %></p>
 
 <% @time = @newsfeed.created_at.localtime %>
 <p>Created by: <%= @newsfeed.first_name %> <%= @newsfeed.last_name %> - <%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
