@@ -6,9 +6,6 @@
 <% end %>
 
 <h2 class="edit_style">Previous Style</h2>
-
-<div id="previous_style">
-<%=raw @style.previous %>
-</div>
-
-
+<%= simple_form_for @style do |f| %>
+	<%= f.input :previous, label:false, required: false %>
+<% end %>
