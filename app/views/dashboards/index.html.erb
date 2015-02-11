@@ -19,7 +19,7 @@
 	<% end %>
 </div>
 
-<%= button_to("Edit Style", edit_style_path(2), method: :get) %>
+<%= button_to("Edit Style", edit_style_path(@school.id), method: :get) %>
 
 <div id="dashboard_newsfeed"
 	<% if @newsfeeds %>
