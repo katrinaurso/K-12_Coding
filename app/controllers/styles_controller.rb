@@ -11,10 +11,10 @@ class StylesController < ApplicationController
   	@style = Style.find(params[:id])
   	@previous = @style.current
   	if @style.update(current:params[:style][:current], previous:@previous)
-  	  redirect_to dashboards_path
+      redirect_to dashboards_path
     else
-      flash[:errors] = @style.errors.full_messages
-  	  redirect_to :back
-  	end
+      flash[:errors] = ["You have removed all styling.  Is that what you wanted?"] 
+  	  redirect_to edit_style_path @style
+    end
   end
 end
