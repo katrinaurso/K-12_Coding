@@ -7,12 +7,12 @@
 	<% end %>
 
 	<%= simple_form_for @admin do |f| %>
-		<%= f.input :first_name, required: false %>
-		<%= f.input :last_name, required: false %>
-		<%= f.association :school, required: false %>
-		<%= f.input :email, required: false %>
-		<%= f.input :pass, required: false, label: 'Password' %>
-		<%= f.input :pass_confirmation, label: 'Password Confirmation' %>
+		<%= f.input :first_name, required: false, label: false, placeholder: "First Name" %>
+		<%= f.input :last_name, required: false, label: false, placeholder: "Last Name" %>
+		<%= f.association :school, required: false, label: false, prompt: "School" %>
+		<%= f.input :email, required: false, label: false, placeholder: "Email" %>
+		<%= f.input :pass, required: false, label: false, placeholder: "Password" %>
+		<%= f.input :pass_confirmation, label: false, placeholder: "Confirm Password" %>
 		<%= f.button :submit, 'Register' %>
 
 	<% end %>

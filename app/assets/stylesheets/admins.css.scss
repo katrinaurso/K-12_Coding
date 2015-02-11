@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
  
-#backendBody {
+#rlBody {
 	background-color: white;
 	margin: 0 auto;
 	width: 100%;
@@ -10,20 +10,55 @@
 	font-family: sans-serif;
 }
 
-#loginH1 {
+#lrHeader{
 	background-color: #539a71;
-	height: 45px;
-	margin: 0;
-	padding: 15px;
-	color: white;
+	white-space: nowrap;
 }
 
-.rl {
-	display: inline-block;
+#loginH1 {
+	margin: 0 auto;
+	padding: 20px;
+	color: white;
 	vertical-align: top;
-	margin: 10px;
+	display: inline-block;
+}
+
+.login{
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: 200px;
+}
+
+	.session_email, .session_pass, .btn{
+		display: inline-block;
+	}
+
+	.login_button{
+		background-color: white;
+		color: #539a71;
+		font-size: 14px;
+		font-weight: bold;
+		height: 27px;
+		width: 75px;
+		padding: 2px;
+		border: none;
+		border-radius: 5px;
+		margin-left: 20px;
+	}
+
+
+.register {
+	display: inline-block;
+	margin-left: 800px;
+	vertical-align: top;
+	white-space: nowrap;
+	color: #539a71;
 }
 
 input, select {
-	margin: 10px;
+	margin-bottom: 20px;
+	padding: 2px;
+	height: 20px;
+	width: 200px;
+	font-size: 14px;
 }
