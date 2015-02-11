@@ -1,3 +1,44 @@
 // Place all the styles related to the Styles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+input.btn.style_update{
+	background-color: #539a71;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100px;
+	display: inline-block;
+	margin-left: 80%;
+	white-space: nowrap;
+}
+
+h1.edit_style{
+	margin-left: 10%;
+}
+
+h2.edit_style{
+	margin-left: 9%;
+}
+
+#previous_style{
+	background-color: black;
+	color: white;
+	font-size: 19px;
+	height: 300px;
+	width: 980px;
+	overflow: auto;
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	padding: 22px;
+	padding-top: 24px;
+}
+
+#previous_style h2{
+	margin-left: 10%;
+}
+
