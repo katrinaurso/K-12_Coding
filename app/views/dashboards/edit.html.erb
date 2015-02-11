@@ -1,4 +1,4 @@
-<h1>Dashboards#edit</h1>
+<h1>Edit Newsfeed</h1>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
@@ -7,9 +7,9 @@
 <% end %>
 
 <%= simple_form_for @newsfeed, url: dashboard_path do |f| %>
-	<%= f.input :title, required: false %>
-	<%= f.input :content, required: false %>
-	<%= f.button :submit, 'Update' %>
+	<%= f.input :title, label: false, required: false, placeholder: "Title" %>
+	<%= f.input :content, label: false, required: false, placeholder: "Post content using HTML tags. Then edit your CSS Stylesheet by clicking 'Edit Style' below!" %>
+	<%= f.button :submit, 'Update', :class => "publish_button" %>
 <% end %>
 
 <%= button_to('Delete', dashboard_path, method: :delete) %>

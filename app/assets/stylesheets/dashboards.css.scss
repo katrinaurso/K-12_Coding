@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**{
+	outline: 1px solid red;
+}*/
+
 #nav {
 	background-color: #539a71;
+	white-space: nowrap;
 }
 
 .company{
@@ -38,27 +43,29 @@ li.nav {
 	display: inline-block;
 }
 
-p{
-	margin-left: 10%;
+#dashboard_newsfeed{
+	margin-left:10%;
+	margin-right:10%;
 }
 
 #newsfeed_title{
 	color: black;
+	font-weight: bold;
 	font-size: 18px;
-	width: 900px;
+	width: 1000px;
 	margin-left: 10%;
+	padding: 10px;
 }
 
 textarea {
-	height: 150px;
-	width: 300px;
 	background-color: black;
 	color: white;
 	font-size: 18px;
 	height: 300px;
-	width: 900px;
+	width: 980px;
 	overflow: auto;
 	margin-left: 10%;
+	padding: 20px;
 
 }
 
@@ -81,9 +88,10 @@ a.nav {
 	width: 100px;
 	display: inline-block;
 	margin-left: 60%;
+	white-space: nowrap;
 }
 
-.btn {
+.publish_button {
 	background-color: #539a71;
 	color: white;
 	font-weight: bold;
@@ -94,6 +102,7 @@ a.nav {
 	display: inline-block;
 	position: absolute;
 	left: 70%;
+	white-space: nowrap;
 }
 
 input.nav {
@@ -123,18 +132,30 @@ iframe{
 
 .live_view{
 	font-size: 40px;
-	margin-left:475px;
-	margin-top:100px;
+	margin-left: 530px;
+	margin-top:25px;
 }
-
 
 #iframe {
 	left: 50%;
 	margin-left: 100px;
-
+	margin-bottom: -50px;
+	overflow: hidden;
 }
 
-#nav p {
-	line-height: 25px;
+#dashboard_footer{
+	background-color: #539a71;
+	vertical-align: bottom;
+	height: 50px;
+	color: white;
+}
+
+/*Show Newsfeed Post*/
+
+#backendBody .show_title{
 	margin-left: 5%;
 }
+
+/*Edit Newsfeed Post*/
+
+/*Edit Style*/
