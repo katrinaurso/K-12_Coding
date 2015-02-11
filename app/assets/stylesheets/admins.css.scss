@@ -6,7 +6,7 @@
 	background-color: white;
 	margin: 0 auto;
 	width: 100%;
-	height: auto;
+	height: 600px;
 	font-family: sans-serif;
 }
 
@@ -16,8 +16,8 @@
 }
 
 #loginH1 {
-	/*margin: 0 auto;*/
 	padding: 20px;
+	margin-left: 20px;
 	color: white;
 	vertical-align: top;
 	display: inline-block;
@@ -26,7 +26,7 @@
 .login{
 	display: inline-block;
 	margin-top: 40px;
-	margin-left: 200px;
+	margin-left: 180px;
 }
 
 	.session_email, .session_pass, .btn{
@@ -63,7 +63,7 @@
 #about p{
 	font-size: 18px;
 	line-height: 30px;
-	margin-right: 50px;
+	margin-right: 60px;
 }
 
 .register {
