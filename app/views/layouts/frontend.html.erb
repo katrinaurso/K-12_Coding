@@ -25,6 +25,7 @@
 			<div id="calendar"></div>
 			<h1>Current Weather in<br><%= @school.city %>, <%= @school.state %></h1>
 			<h2><%= @weather["data"]["current_condition"][0]["temp_F"] %>° F</h2>
+			<h1><%= @weather["data"]["current_condition"][0]['weatherDesc'][0]['value'] %></h1>
 			<img src="<%= @weather["data"]["current_condition"][0]['weatherIconUrl'][0]['value'] %>">
 		</div>
 
