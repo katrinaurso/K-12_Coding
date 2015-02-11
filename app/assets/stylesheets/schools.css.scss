@@ -19,111 +19,116 @@ body{
 			display: inline-block;
 		}
 
-		.school{
-			color: white;
-			font-size: 50px;
-			padding-left: 20px;
-			display: inline-block;
-			margin-top: 150px;
-			width: 600px;
-			vertical-align: top;
-		}
-
-		#header img{
-			display: inline-block;
-			margin-left: 80px;
-			margin-top: 15px;
-			vertical-align: top;
-		}
-
-			.newsfeed{
-				background-color: white;
+			.school{
+				color: white;
+				font-size: 50px;
+				padding-left: 20px;
+				display: inline-block;
+				margin-top: 150px;
 				width: 600px;
-				display: inline-block;
-				height: 980px;
-				overflow: auto;
-				/*line-height: 0px;*/
+				vertical-align: top;
 			}
 
-				h2{
-					padding-left: 15px;
-					padding-right: 15px;
-					padding-top: 15px;
-				}
-
-				p{
-					padding-left: 20px;
-					padding-right: 20px;
-					font-size: 18px;
-				}
-
-				.timestamp{
-					font-size: 14px;
-				}
-
-			.sidebar{
-				background-color: white;
-				width: 360px;
-				height: 950px;
+			#header img{
 				display: inline-block;
-				position: absolute;
-				border-left: 8px solid #02175a;
-				padding: 15px;
+				margin-left: 80px;
+				margin-top: 15px;
+				vertical-align: top;
 			}
 
-				.sidebar h1{
-					color: black;
-					font-size: 24px;
-					text-align: center;
-					margin-top: 40px;
+		.newsfeed{
+			background-color: white;
+			width: 602px;
+			display: inline-block;
+			height: 980px;
+			overflow: auto;
+			/*line-height: 0px;*/
+		}
 
-				}
+			h2{
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 15px;
+			}
 
-				.sidebar h2{
-					text-align: center;
+			p{
+				padding-left: 20px;
+				padding-right: 20px;
+				font-size: 18px;
+			}
+
+			.timestamp{
+				font-size: 14px;
+			}
+
+			.news_button{
+				margin: 25px 0 25px 275px;
+				font-size: 16px;
+				padding: 5px 8px;
+				border-radius: 5px;
+				border: 1px solid lightgray;
+			}
+
+		.sidebar{
+			background-color: white;
+			width: 360px;
+			height: 950px;
+			display: inline-block;
+			position: absolute;
+			border-left: 8px solid #02175a;
+			padding: 15px;
+		}
+			#calendar{
+				width: 90%;
+				margin: 0 auto;
+				padding-bottom: 40px;
+				border-bottom: 8px solid #02175a;
+			}
+
+				#calendar h2{
 					font-size: 40px;
 				}
 
-				.sidebar img{
-					width: 200px;
-					height: 200px;
-					display: block;
-					margin: 0 auto;
+				#calendar .fc-today-button{
+					margin-top: 15px;
 				}
 
-				#calendar{
-					width: 90%;
-					margin: 0 auto;
-					padding-bottom: 40px;
-					border-bottom: 8px solid #02175a;
+				#calendar .fc-prev-button{
+					margin-top: 15px;
 				}
 
-					#calendar h2{
-						font-size: 40px;
-					}
+				#calendar .fc-next-button{
+					margin-top: 15px;
+				}
 
-					#calendar .fc-today-button{
-						margin-top: 15px;
-					}
-
-					#calendar .fc-prev-button{
-						margin-top: 15px;
-					}
-
-					#calendar .fc-next-button{
-						margin-top: 15px;
-					}
-
-			#footer{
-				color: white;
-				letter-spacing: 2px;
+			.sidebar h1{
+				color: black;
+				font-size: 24px;
 				text-align: center;
+				margin-top: 40px;
+
 			}
+
+			.sidebar h2{
+				text-align: center;
+				font-size: 40px;
+			}
+
+			.sidebar img{
+				width: 200px;
+				height: 200px;
+				display: block;
+				margin: 0 auto;
+			}
+
+		#footer{
+			color: white;
+			letter-spacing: 2px;
+			text-align: center;
+		}
 
 			#footer a{
 				color: gray;
 				letter-spacing: 2px;
 				text-align: center;
 			}
-
-
