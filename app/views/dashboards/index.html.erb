@@ -22,7 +22,7 @@
 <div id="dashboard_newsfeed">
 	<% if @newsfeeds %>
 		<% @newsfeeds.each do |n| %>
-			<a href="/dashboards/<%= n.id %>"><h2><%= n.title %></h2></a>
+			<a href="/dashboards/<%= n.id %>"><h2 class="post_title"><%= n.title %></h2></a>
 			<p><%=raw n.content %></p>
 			<% @time = n.created_at.localtime %>
 			<p><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
@@ -31,5 +31,5 @@
 </div>
 
 <h2 class="live_view">Live View</h2>
-<div id="iframe"><iframe id='iframe' src='/schools/<%= @school.id %>' /></div>
+<div id="iframe"><iframe id='iframe' src='/schools/<%= @school.id %>'></iframe></div>
 
