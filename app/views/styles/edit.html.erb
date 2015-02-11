@@ -1,10 +1,14 @@
-<h1 class="edit_style">Edit Styles for <%= @school.name %></h1>
+<h1 class="edit_style">Edit Stylesheet for <%= @school.name %></h1>
 
 <%= simple_form_for @style, url:  style_path, method: :put  do |f| %>
-	<%= f.input :current, label:false, required: false %>
-	<%= f.button :submit, 'Update Style' %>
+	<%= f.input :current, label:false, required: false, placeholder: "Write and edit CSS!" %>
+	<%= f.button :submit, 'Update Style', {class: "style_update"} %>
 <% end %>
 
-<h2>Previous Style</h2>
+<h2 class="edit_style">Previous Style</h2>
+
+<div id="previous_style">
 <%=raw @style.previous %>
+</div>
+
 
