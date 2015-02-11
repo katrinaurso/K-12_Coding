@@ -2,7 +2,6 @@
 
 <h2 class="welcome">Welcome <%= @admin.first_name %>!</h2>
 
-
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
 		<p><%= error %></p>
