@@ -6,7 +6,7 @@
 	background-color: white;
 	margin: 0 auto;
 	width: 100%;
-	height: 600px;
+	min-height: 600px;
 	font-family: sans-serif;
 }
 
@@ -95,4 +95,17 @@ input, select {
 	height: 20px;
 	width: 200px;
 	font-size: 14px;
+}
+
+.editprofile_button{
+	background-color: #539a71;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	width: 210px;
+	padding: 2px;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: .5px;
 }

@@ -5,6 +5,6 @@
 <p><%= @admin.first_name %> <%= @admin.last_name %></p>
 <p><%= @school.name %></p>
 
-<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get %>
+<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get, :class => "editprofile_button" %>
 
 </div>
