@@ -48,6 +48,16 @@ class AdminsController < ApplicationController
     end
   end
 
+  def add
+    @image = Admin.find(params[:id])
+    if @image.update(admin_params)
+      redirect_to admin_path @image
+    else
+      flash[:errors] = @image.errors.full_messages
+      redirect_to edit_admin_path @image
+    end
+  end
+
   def destroy
   end
 

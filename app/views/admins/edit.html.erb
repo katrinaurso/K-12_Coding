@@ -6,7 +6,7 @@
 	<% end %>
 <% end %>
 
-<%= image_tag("Profile_Photo.png", :alt => "Profile Photo", :class => "profile_photo") %>
+<%= image_tag(@admin.image, :alt => "Profile Photo", :class => "profile_photo_edit") %>
 
 <%= simple_form_for @admin, url: admin_path, method: :put do |f| %>
 	<%= f.input :first_name, required: false, label: false, placeholder: "First Name" %>
@@ -14,12 +14,8 @@
 	<%= f.association :school, required: false, label: false, prompt: "School" %>
 	<%= f.input :email, required: false, label: false, placeholder: "Email" %>
 	<%= f.input :pass, required: false, label: false, placeholder: 'New Password' %>
-	<%= f.input :pass_confirmation, label: false, placeholder: 'Confirm New Password' %>
-	<%= f.input :image %>
+	<%= f.input :pass_confirmation, required: false, label: false, placeholder: 'Confirm New Password' %>
+	<%= f.input :image, label: false %>
 	<%= f.button :submit, 'Update', :class => "updateProfile_button" %>
 
 <% end %>
-
-
-
-

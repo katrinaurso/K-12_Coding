@@ -30,23 +30,6 @@ ActiveRecord::Schema.define(version: 20150212002002) do
 
   add_index "admins", ["school_id"], name: "index_admins_on_school_id"
 
-  create_table "images", force: true do |t|
-    t.integer  "admin_id"
-    t.integer  "school_id"
-    t.integer  "table_id"
-    t.string   "table_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  add_index "images", ["admin_id"], name: "index_images_on_admin_id"
-  add_index "images", ["school_id"], name: "index_images_on_school_id"
-  add_index "images", ["table_id", "table_type"], name: "index_images_on_table_id_and_table_type"
-
   create_table "newsfeeds", force: true do |t|
     t.integer  "school_id"
     t.integer  "admin_id"

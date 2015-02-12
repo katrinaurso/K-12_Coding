@@ -6,7 +6,7 @@ class Admin < ActiveRecord::Base
 	has_attached_file :image
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-	attr_accessor :pass, :pass_confimration
+	attr_accessor :pass, :pass_confirmation
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
 	validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 20 }

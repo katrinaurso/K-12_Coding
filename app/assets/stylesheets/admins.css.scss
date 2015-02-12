@@ -103,11 +103,12 @@ input, select {
 	font-size: 14px;
 	font-weight: bold;
 	height: 30px;
-	width: 210px;
+	width: 200px;
 	padding: 2px;
 	border: none;
 	border-radius: 5px;
 	letter-spacing: .5px;
+	margin-top: 20px;
 }
 
 .edit_profileH1{
@@ -117,16 +118,21 @@ input, select {
 .edit_admin{
 	margin-top: 50px;
 	margin-left: 75px;
-	display: inline-block;
-}
-
-.profile_photo{
-	width: 150px;
-	height: 200px;
+	margin-bottom: 75px;
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 100px;
+}
+
+.profile_photo_edit{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10%;
 	margin-top: 30px;
+}
+
+.profile_content{
+	display: inline-block;
+	vertical-align: top;
 }
 
 .updateProfile_button{
@@ -140,4 +146,5 @@ input, select {
 	border: none;
 	border-radius: 5px;
 	letter-spacing: .5px;
+	margin-bottom: 30px;
 }

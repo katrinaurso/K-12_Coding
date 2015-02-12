@@ -1,14 +1,12 @@
-
 <div id="container">
+	<h1><%= @admin.first_name %>'s Profile</h1>
 
-<h1><%= @admin.first_name %>'s Profile</h1>
+	<%= image_tag(@admin.image, :alt => "Profile Photo", :class => "profile_photo") %>
 
-<%= image_tag(@school.logo, :alt => "Logo") %>
+<div class = "profile_content">
+	<p><%= @admin.first_name %> <%= @admin.last_name %></p>
+	<p><%= @school.name %></p>
+</div>
 
-<p><%= @admin.first_name %> <%= @admin.last_name %></p>
-<p><%= @school.name %></p>
-<%= image_tag @admin.image.url %>
-
-<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get, :class => "editprofile_button" %>
-
+	<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get, :class => "editprofile_button" %>
 </div>
