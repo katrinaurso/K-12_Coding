@@ -1,12 +1,14 @@
-<h1 class="show_title"><%= @newsfeed.title %></h1>
+<h1 class="dashboard_name"><%= @newsfeed.title %></h1>
 
-<p><%=raw @newsfeed.content %></p>
+<div id="dashboard_newsfeed">
+	<p><%=raw @newsfeed.content %></p>
 
-<% @time = @newsfeed.created_at.localtime %>
-<p>Created by: <%= @newsfeed.first_name %> <%= @newsfeed.last_name %> - <%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
+	<% @time = @newsfeed.created_at.localtime %>
+	<p>Created by: <%= @newsfeed.first_name %> <%= @newsfeed.last_name %> - <%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
 
-<% @time2 = @newsfeed.updated_at.localtime %>
-<p>Last updated by: <%= @updated_by.first_name %> <%= @updated_by.last_name %> -  <%= @time2.strftime('%B %d, %Y - %I:%M %p') %></p>
+	<% @time2 = @newsfeed.updated_at.localtime %>
+	<p>Last updated by: <%= @updated_by.first_name %> <%= @updated_by.last_name %> -  <%= @time2.strftime('%B %d, %Y - %I:%M %p') %></p>
+</div>
 
-<%= button_to('Edit', edit_dashboard_path, method: :get) %>
-<%= button_to('Delete', dashboard_path, method: :delete) %>
+<%= button_to('Delete', dashboard_path, method: :delete, :class => "publish_button") %>
+<%= button_to('Edit', edit_dashboard_path, method: :get, :class => "edit_button") %>
