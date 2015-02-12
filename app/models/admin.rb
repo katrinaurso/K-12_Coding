@@ -3,6 +3,8 @@ class Admin < ActiveRecord::Base
 	has_many :newsfeeds
 	has_many :updated_bys, class_name: "Admin", foreign_key: "updated_by", :through => :newsfeeds
 
+	has_attached_file :image
+	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 	attr_accessor :pass, :pass_confimration
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i

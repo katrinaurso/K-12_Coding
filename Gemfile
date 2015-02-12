@@ -53,3 +53,6 @@ gem 'json', '~>1.8.1'
 # Calendar
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# Paperclip for file uplaod
+gem "paperclip", "~> 4.2"
