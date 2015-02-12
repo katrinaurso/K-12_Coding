@@ -1,10 +1,12 @@
-<h1>Edit <%= @admin.first_name %>'s Profile</h1>
+<h1 class="edit_profileH1">Edit <%= @admin.first_name %>'s Profile</h1>
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
 		<p><%= error %></p>
 	<% end %>
 <% end %>
+
+<%= image_tag("Profile_Photo.png", :alt => "Profile Photo", :class => "profile_photo") %>
 
 <%= simple_form_for @admin, url: admin_path, method: :put do |f| %>
 	<%= f.input :first_name, required: false, label: false, placeholder: "First Name" %>
@@ -13,5 +15,9 @@
 	<%= f.input :email, required: false, label: false, placeholder: "Email" %>
 	<%= f.input :pass, required: false, label: false, placeholder: 'New Password' %>
 	<%= f.input :pass_confirmation, label: false, placeholder: 'Confirm New Password' %>
-	<%= f.button :submit, 'Update' %>
+	<%= f.button :submit, 'Update', :class => "updateProfile_button" %>
 <% end %>
+
+
+
+
