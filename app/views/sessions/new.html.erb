@@ -2,7 +2,7 @@
 
 <%= simple_form_for(:session, url: sessions_path) do |f| %>
 	<%= f.input :email, required: false, label: false, placeholder: "Email" %>
-	<%= f.input :pass, required: false, label: false, placeholder: "Password" %>
+	<%= f.input :password, required: false, label: false, placeholder: "Password" %>
 	<%= f.button :submit, "Login", :class => "login_button" %>
 <% end %>
 

@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	admin = Admin.authenticate(params[:session][:email], params[:session][:pass])
+  	admin = Admin.authenticate(params[:session][:email], params[:session][:password])
   	if admin.nil?
   		flash[:notice] = 'Admin not found!'
   		redirect_to root_path

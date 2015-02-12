@@ -13,8 +13,8 @@
 	<%= f.input :last_name, required: false, label: false, placeholder: "Last Name"  %>
 	<%= f.association :school, required: false, label: false, prompt: "School" %>
 	<%= f.input :email, required: false, label: false, placeholder: "Email" %>
-	<%= f.input :pass, required: false, label: false, placeholder: 'New Password' %>
-	<%= f.input :pass_confirmation, required: false, label: false, placeholder: 'Confirm New Password' %>
+	<%= f.input :password, required: false, label: false, placeholder: 'Password' %>
+	<%= f.input :password_confirmation, required: false, label: false, placeholder: 'Confirm Password' %>
 	<%= f.input :image, label: false %>
 	<%= f.button :submit, 'Update', :class => "updateProfile_button" %>
 

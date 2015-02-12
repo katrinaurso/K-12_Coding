@@ -41,7 +41,7 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params[:id])
     if @admin.update(admin_params)
-      redirect_to dashboards_path
+      redirect_to admin_path @admin
     else
       flash[:errors] = @admin.errors.full_messages
       redirect_to edit_admin_path @admin
@@ -63,6 +63,6 @@ class AdminsController < ApplicationController
 
   private
   def admin_params
-    params.require(:admin).permit(:first_name, :last_name, :email, :pass, :pass_confirmation, :school_id, :image)
+    params.require(:admin).permit(:first_name, :last_name, :email, :password, :password_confirmation, :school_id, :image)
   end
 end
