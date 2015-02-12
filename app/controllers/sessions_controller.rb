@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	admin = Admin.authenticate(params[:session][:email], params[:session][:pass])
   	if admin.nil?
   		flash[:notice] = 'Admin not found!'
-  		redirect_to new_session_path
+  		redirect_to root_path
   	else 
   		log_in admin
   		redirect_to dashboards_path
