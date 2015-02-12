@@ -109,3 +109,35 @@ input, select {
 	border-radius: 5px;
 	letter-spacing: .5px;
 }
+
+.edit_profileH1{
+	margin-left: 10%;
+}
+
+.edit_admin{
+	margin-top: 50px;
+	margin-left: 75px;
+	display: inline-block;
+}
+
+.profile_photo{
+	width: 150px;
+	height: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 100px;
+	margin-top: 30px;
+}
+
+.updateProfile_button{
+	background-color: #539a71;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	width: 210px;
+	padding: 2px;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: .5px;
+}

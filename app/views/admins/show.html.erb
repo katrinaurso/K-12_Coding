@@ -1,6 +1,9 @@
 
 <div id="container">
+
 <h1><%= @admin.first_name %>'s Profile</h1>
+
+<%= image_tag(@school.logo, :alt => "Logo") %>
 
 <p><%= @admin.first_name %> <%= @admin.last_name %></p>
 <p><%= @school.name %></p>
