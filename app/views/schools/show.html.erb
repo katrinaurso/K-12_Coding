@@ -1,7 +1,7 @@
 <% if @newsfeed %>
 	<% @newsfeed.each do |news| %>
 		<div id="<%= news.id %>" class="news">
-			<h2><%= news.title %></h2>
+			<a href="#"><h2><%= news.title %></h2></a>
 			<p><%=raw news.content %></p>
 			<% @time = news.created_at.localtime %>
 			<p class="timestamp"><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
