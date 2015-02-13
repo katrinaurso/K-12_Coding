@@ -45,7 +45,7 @@ class DashboardsController < ApplicationController
 
   def update
      @newsfeed = Newsfeed.find(params[:id])
-    if @newsfeed.update(title:params[:newsfeed][:title], content:params[:newsfeed][:content], updated_by:current_admin)
+    if @newsfeed.update(title:params[:newsfeed][:title], content:params[:newsfeed][:content], updated_by:current_admin, image:params[:newsfeed][:content])
       redirect_to dashboard_path @newsfeed
     else
       flash[:errors] = @newsfeed.errors.full_messages
