@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
   end
 
   def create
-    @admin = Admin.create(admin_params)
+    @admin = Admin.new(admin_params)
     if @admin.save
       log_in @admin
       redirect_to dashboards_path
@@ -18,6 +18,7 @@ class AdminsController < ApplicationController
       flash[:errors] = @admin.errors.full_messages
       redirect_to '/'
     end
+    
   end
 
   def show

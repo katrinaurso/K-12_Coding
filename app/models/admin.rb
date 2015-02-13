@@ -15,9 +15,6 @@ class Admin < ActiveRecord::Base
 	validates :password, presence: true, length: { in: 6..15 }, confirmation: true
 
 	before_save :encrypt_password
-	before_save do 
-		self.email.downcase!
-	end
 
 	def has_password?(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)
@@ -30,12 +27,16 @@ class Admin < ActiveRecord::Base
 	end
 
 	private
-		def encrypt_password
-			self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") if self.new_record?
-			self.encrypted_password = encrypt(self.encrypted_password)
-		end
+	def encrypt_password
+	if self.new_record?
+		self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") 
+	end
+		
+	self.encrypted_password = encrypt(self.password)
 
-		def encrypt(password)
-			Digest::SHA2.hexdigest("#{self.salt}--#{password}")
-		end
+	end
+
+	def encrypt(password)
+		Digest::SHA2.hexdigest("#{self.salt}--#{password}")		
+	end
 end
