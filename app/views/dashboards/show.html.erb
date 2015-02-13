@@ -1,6 +1,9 @@
 <h1 class="dashboard_name"><%= @newsfeed.title %></h1>
 
 <div id="dashboard_newsfeed">
+	<% if @newsfeed.image.file? %>
+		<%= image_tag @newsfeed.image %>
+	<% end %>
 	<p><%=raw @newsfeed.content %></p>
 
 	<% @time = @newsfeed.created_at.localtime %>

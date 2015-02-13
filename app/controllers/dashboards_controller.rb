@@ -45,7 +45,7 @@ class DashboardsController < ApplicationController
 
   def update
      @newsfeed = Newsfeed.find(params[:id])
-    if @newsfeed.update(title:params[:newsfeed][:title], content:params[:newsfeed][:content], updated_by:current_admin, image:params[:newsfeed][:content])
+    if @newsfeed.update(newsfeed_params)
       redirect_to dashboard_path @newsfeed
     else
       flash[:errors] = @newsfeed.errors.full_messages
@@ -57,5 +57,10 @@ class DashboardsController < ApplicationController
   def destroy
     @newsfeed = Newsfeed.find(params[:id]).destroy
     redirect_to dashboards_path
+  end
+
+  private
+  def newsfeed_params
+    params.require(:newsfeed).permit(:title, :content, :updated_by, :image)
   end
 end

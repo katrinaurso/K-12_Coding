@@ -45,16 +45,33 @@ body{
 			/*line-height: 0px;*/
 		}
 
+			a {
+				color: black;
+			}
+
 			h2{
 				padding-left: 15px;
 				padding-right: 15px;
 				padding-top: 15px;
 			}
 
+			img.content{
+				width: 175px;
+				margin: 10px;
+				float: right;
+				vertical-align: top;
+				display: inline-block;
+			}
+
 			p{
 				padding-left: 20px;
 				padding-right: 20px;
 				font-size: 18px;
+			}
+
+			p.content {
+				vertical-align: top;
+				display: inline-block;
 			}
 
 			.timestamp{

@@ -6,7 +6,7 @@
 	<% end %>
 <% end %>
 
-<%= simple_form_for @newsfeed, url: dashboard_path do |f| %>
+<%= simple_form_for @newsfeed, url: dashboard_path, html: { multipart: true } do |f| %>
 	<%= f.input :title, label: false, required: false, placeholder: "Title" %>
 	<%= f.input :content, label: false, required: false, placeholder: "Post content using HTML tags. Then edit your CSS Stylesheet by clicking 'Edit Style' below!" %>
 	<%= f.input :image %>
