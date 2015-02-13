@@ -62,6 +62,10 @@ body{
 				vertical-align: top;
 				display: inline-block;
 			}
+			div.content {
+				vertical-align: top;
+				display: inline-block;
+			}
 
 			p{
 				padding-left: 20px;
@@ -69,13 +73,9 @@ body{
 				font-size: 18px;
 			}
 
-			p.content {
-				vertical-align: top;
-				display: inline-block;
-			}
-
 			.timestamp{
 				font-size: 14px;
+				display: block;
 			}
 
 			.news_button{

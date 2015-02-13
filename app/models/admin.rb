@@ -20,6 +20,8 @@ class Admin < ActiveRecord::Base
 	end
 
 	def has_password?(submitted_password)
+		puts self.encrypted_password
+		puts encrypt(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)
 	end
 
