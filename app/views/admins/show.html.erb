@@ -1,12 +1,14 @@
 <div id="container">
 	<h1><%= @admin.first_name %>'s Profile</h1>
 
-	<%= image_tag(@admin.image, :alt => "Profile Photo", :class => "profile_photo") %>
-
-<div class = "profile_content">
-	<p><%= @admin.first_name %> <%= @admin.last_name %></p>
-	<p><%= @school.name %></p>
-</div>
+	<% if @admin.image.file? %>
+		<%= image_tag(@admin.image.url, :alt => "Profile Photo", :class => "profile_photo") %>	
+	<% end %>
+	
+	<div class = "profile_content">
+		<p><%= @admin.first_name %> <%= @admin.last_name %></p>
+		<p><%= @school.name %></p>
+	</div>
 
 	<%= button_to 'Edit My Profile', (edit_admin_path @admin.id), method: :get, :class => "editprofile_button" %>
 </div>

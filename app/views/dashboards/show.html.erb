@@ -4,7 +4,7 @@
 	
 	<p.contnet>
 		<% if @newsfeed.image.file? %>
-			<%= image_tag @newsfeed.image, class: "content" %>
+			<%= image_tag @newsfeed.image.url, class: "content" %>
 		<% end %>
 		<%=raw @newsfeed.content %>
 	</p>
