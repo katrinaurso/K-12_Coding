@@ -1,7 +1,13 @@
 <h1 class="dashboard_name"><%= @newsfeed.title %></h1>
 
 <div id="dashboard_newsfeed">
-	<p><%=raw @newsfeed.content %></p>
+	
+	<p.contnet>
+		<% if @newsfeed.image.file? %>
+			<%= image_tag @newsfeed.image.url, class: "content" %>
+		<% end %>
+		<%=raw @newsfeed.content %>
+	</p>
 
 	<% @time = @newsfeed.created_at.localtime %>
 	<p>Created by: <%= @newsfeed.first_name %> <%= @newsfeed.last_name %> - <%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>

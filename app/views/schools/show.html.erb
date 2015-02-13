@@ -2,7 +2,12 @@
 	<% @newsfeed.each do |news| %>
 		<div id="<%= news.id %>" class="news">
 			<a href="#"><h2><%= news.title %></h2></a>
-			<p><%=raw news.content %></p>
+			<div class="content">
+				<% if news.image.file? %>
+					<%= image_tag news.image, class: "content" %>
+				<% end %>
+				<%=raw news.content %>
+			</div>
 			<% @time = news.created_at.localtime %>
 			<p class="timestamp"><%= @time.strftime('%B %d, %Y - %I:%M %p') %></p>
 			<button class="news_button">Home</button>

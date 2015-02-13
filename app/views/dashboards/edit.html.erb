@@ -6,10 +6,10 @@
 	<% end %>
 <% end %>
 
-<%= simple_form_for @newsfeed, url: dashboard_path do |f| %>
+<%= simple_form_for @newsfeed, url: dashboard_path, html: { multipart: true } do |f| %>
 	<%= f.input :title, label: false, required: false, placeholder: "Title" %>
 	<%= f.input :content, label: false, required: false, placeholder: "Post content using HTML tags. Then edit your CSS Stylesheet by clicking 'Edit Style' below!" %>
-	<%= f.input :image %>
+	<%= f.input :image, label: false, required: false %>
 	<%= f.button :submit, 'Update', :class => "publish_button"%>	
 <% end %>
 	<%= button_to('Delete', dashboard_path, method: :delete, :class => "edit_button") %>

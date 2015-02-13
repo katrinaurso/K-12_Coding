@@ -17,6 +17,8 @@ class Admin < ActiveRecord::Base
 	before_save :encrypt_password
 
 	def has_password?(submitted_password)
+		puts self.encrypted_password
+		puts encrypt(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)
 	end
 
@@ -27,16 +29,12 @@ class Admin < ActiveRecord::Base
 	end
 
 	private
-	def encrypt_password
-	if self.new_record?
-		self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") 
-	end
-		
-	self.encrypted_password = encrypt(self.password)
+		def encrypt_password
+			self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") if self.new_record?
+			self.encrypted_password = encrypt(self.password)
+		end
 
-	end
-
-	def encrypt(password)
-		Digest::SHA2.hexdigest("#{self.salt}--#{password}")		
-	end
+		def encrypt(password)
+			Digest::SHA2.hexdigest("#{self.salt}--#{password}")
+		end
 end

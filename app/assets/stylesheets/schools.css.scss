@@ -45,10 +45,26 @@ body{
 			/*line-height: 0px;*/
 		}
 
+			a {
+				color: black;
+			}
+
 			h2{
 				padding-left: 15px;
 				padding-right: 15px;
 				padding-top: 15px;
+			}
+
+			img.content{
+				width: 175px;
+				margin: 10px;
+				float: right;
+				vertical-align: top;
+				display: inline-block;
+			}
+			div.content {
+				vertical-align: top;
+				display: inline-block;
 			}
 
 			p{
@@ -59,6 +75,7 @@ body{
 
 			.timestamp{
 				font-size: 14px;
+				display: block;
 			}
 
 			.news_button{
