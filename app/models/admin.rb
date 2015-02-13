@@ -34,7 +34,7 @@ class Admin < ActiveRecord::Base
 	private
 		def encrypt_password
 			self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") if self.new_record?
-			self.encrypted_password = encrypt(self.encrypted_password)
+			self.encrypted_password = encrypt(self.password)
 		end
 
 		def encrypt(password)
