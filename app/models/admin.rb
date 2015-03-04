@@ -12,13 +12,16 @@ class Admin < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 20 }
 	validates :school, presence: true
 	validates :email, presence: true, format: { with: email_regex }, uniqueness: { case_sensitive: false }
-	validates :password, presence: true, length: { in: 6..15 }, confirmation: true
+
+	# validates password for new user
+	validates :password, presence: true, length: { in: 6..15 }, confirmation: true, on: :create
+	# validates password for edit user
+	validates :password, allow_blank: true, length: { in: 6..15 }, confirmation: true, on: :update
 
 	before_save :encrypt_password
+	
 
 	def has_password?(submitted_password)
-		puts self.encrypted_password
-		puts encrypt(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)
 	end
 
@@ -30,8 +33,10 @@ class Admin < ActiveRecord::Base
 
 	private
 		def encrypt_password
-			self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}") if self.new_record?
-			self.encrypted_password = encrypt(self.password)
+			if !self.password.blank?
+				self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{self.password}")
+				self.encrypted_password = encrypt(self.password)
+			end
 		end
 
 		def encrypt(password)

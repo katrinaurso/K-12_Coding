@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'json', '~>1.8.1'
 # Calendar
 gem 'fullcalendar-rails'
+# Momentjs included for full-calendar
 gem 'momentjs-rails'
 # Paperclip for file uplaod
 gem "paperclip", "~> 4.2"
