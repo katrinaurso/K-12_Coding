@@ -1,8 +1,7 @@
 <h1 class="dashboard_name"><%= @newsfeed.title %></h1>
 
-<div id="dashboard_newsfeed">
-	
-	<p.contnet>
+<div id="dashboard_newsfeed">	
+	<p class="content">
 		<% if @newsfeed.image.file? %>
 			<%= image_tag @newsfeed.image.url, class: "content" %>
 		<% end %>

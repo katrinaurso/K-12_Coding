@@ -7,7 +7,6 @@ class SchoolsController < ApplicationController
 
   def show
     @style = Style.select(:current).find(params[:id])
-    puts @style
   	@school = School.find(params[:id])
   	@id = params[:id].to_i
     @newsfeed = Newsfeed.where(school:params[:id]).reverse

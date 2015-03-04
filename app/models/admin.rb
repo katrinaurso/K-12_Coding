@@ -12,15 +12,11 @@ class Admin < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true, length: { minimum: 2, maximum: 20 }
 	validates :school, presence: true
 	validates :email, presence: true, format: { with: email_regex }, uniqueness: { case_sensitive: false }
-
-	# validates password for new user
-	validates :password, presence: true, length: { in: 6..15 }, confirmation: true, on: :create
-	# validates password for edit user
-	validates :password, allow_blank: true, length: { in: 6..15 }, confirmation: true, on: :update
+	validates :password, presence: true, length: { in: 6..15 }, confirmation: true, on: :create # validates password for new user
+	validates :password, allow_blank: true, length: { in: 6..15 }, confirmation: true, on: :update # validates password for edit user
 
 	before_save :encrypt_password
 	
-
 	def has_password?(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)
 	end
